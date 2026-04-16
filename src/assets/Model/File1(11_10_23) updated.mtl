@@ -1,0 +1,454 @@
+# OBJ Material Export by Luxion KeyShot
+
+newmtl Glossy_Plastic
+Kd 0.627451 0.627451 0.627451
+
+newmtl plastic.001
+Kd 0.0153846 0.0153846 0.0153846
+
+newmtl plastic.001
+Kd 0.0153846 0.0153846 0.0153846
+
+newmtl Glossy_Plastic
+Kd 0.627451 0.627451 0.627451
+
+newmtl wire_227153153.002
+Kd 0.000138408 0.863806 0.799446
+
+newmtl plastic.001
+Kd 0.0153846 0.0153846 0.0153846
+
+newmtl wire_255169255
+Kd 0.784314 0.784314 0.784314
+
+newmtl 12___Default
+Kd 0.8 0.8 0.8
+
+newmtl Rubber #1
+Kd 0.0004 0.0004 0.0004
+
+newmtl 12___Default
+Kd 0.8 0.8 0.8
+
+newmtl 12___Default
+Kd 0.8 0.8 0.8
+
+newmtl 12___Default
+Kd 0.8 0.8 0.8
+
+newmtl 12___Default
+Kd 0.8 0.8 0.8
+
+newmtl 12___Default
+Kd 0.8 0.8 0.8
+
+newmtl 12___Default
+Kd 0.8 0.8 0.8
+
+newmtl 12___Default
+Kd 0.8 0.8 0.8
+
+newmtl metal
+Kd 0.026597 0.026597 0.026597
+
+newmtl metal
+Kd 0.026597 0.026597 0.026597
+
+newmtl wire_196196196
+Kd 0.8 0.8 0.8
+
+newmtl wire_055055055
+Kd 0.8 0.8 0.8
+
+newmtl metal
+Kd 0.026597 0.026597 0.026597
+
+newmtl metal
+Kd 0.026597 0.026597 0.026597
+
+newmtl metal
+Kd 0.026597 0.026597 0.026597
+
+newmtl metal
+Kd 0.026597 0.026597 0.026597
+
+newmtl metal
+Kd 0.026597 0.026597 0.026597
+
+newmtl wire_196196196.001
+Kd 0 0 0
+
+newmtl wire_196196196
+Kd 0.8 0.8 0.8
+
+newmtl wire_055055055
+Kd 0.8 0.8 0.8
+
+newmtl ff.004
+Kd 0 0 0
+
+newmtl plastic.002
+Kd 0.478432 0.478432 0.47451
+
+newmtl plastic.002
+Kd 0.478432 0.478432 0.47451
+
+newmtl ff.004
+Kd 0 0 0
+
+newmtl ff.004
+Kd 0 0 0
+
+newmtl ff.004
+Kd 0 0 0
+
+newmtl ff.004
+Kd 0 0 0
+
+newmtl ff.004
+Kd 0 0 0
+
+newmtl ff.004
+Kd 0 0 0
+
+newmtl ff.004
+Kd 0 0 0
+
+newmtl ff.004
+Kd 0 0 0
+
+newmtl ff.004
+Kd 0 0 0
+
+newmtl ff.004
+Kd 0 0 0
+
+newmtl ff.004
+Kd 0 0 0
+
+newmtl ff.004
+Kd 0 0 0
+
+newmtl wire_255169255
+Kd 0.784314 0.784314 0.784314
+
+newmtl wire_255169255
+Kd 0.784314 0.784314 0.784314
+
+newmtl wire_255169255
+Kd 0.784314 0.784314 0.784314
+
+newmtl wire_027177148
+Kd 0.203922 0.203922 0.203922
+
+newmtl wire_255169255
+Kd 0.784314 0.784314 0.784314
+
+newmtl wire_027177148
+Kd 0.203922 0.203922 0.203922
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl Screen
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl wire_154185229
+Kd 0 0 0
+
+newmtl Rubber #1 #2
+Kd 0.0004 0.0004 0.0004
+
+newmtl Rubber #1 #2
+Kd 0.0004 0.0004 0.0004
+
+newmtl Rubber #1
+Kd 0.0004 0.0004 0.0004
+
+newmtl rubber_plastic
+Kd 0.8 0.8 0.8
+
+newmtl rubber_plastic
+Kd 0.8 0.8 0.8
+
+newmtl rubber_plastic
+Kd 0.8 0.8 0.8
+
+newmtl Rubber #1
+Kd 0.0004 0.0004 0.0004
+
+newmtl Rubber #1 #1
+Kd 0.0004 0.0004 0.0004
+
+newmtl rubber_plastic
+Kd 0.8 0.8 0.8
+
+newmtl rubber_plastic
+Kd 0.8 0.8 0.8

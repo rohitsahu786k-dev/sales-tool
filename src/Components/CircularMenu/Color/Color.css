@@ -1,0 +1,76 @@
+  .dots {
+    position: fixed;
+    bottom: 50px;
+    z-index: 99;
+    display: block;
+    transform: translate(25px, 0px);
+  }
+
+  .dots img {
+    width: 80px;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin: 2px;
+    transition: all ease-in-out 0.5;
+    -webkit-transition: all ease-in-out 0.5;
+  }
+
+  .dots img.active {
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    transition: all ease-in-out 0.5;
+    -webkit-transition: all ease-in-out 0.5;
+  }
+
+  .division {
+    float: left;
+  }
+
+  .heading {
+    font-size: 24px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+  }
+
+  .imageView img {
+    width: 100vw;
+    left: 0;
+    position: absolute;
+
+  }
+
+  .deskLayout {
+    position: absolute !important;
+    right: 100px !important;
+    left: auto !important;
+    width: 60% !important;
+    transform: translate(10px, 25%);
+    -webkit-transform: translate(10px, 10%);
+  }
+  .deskFeat{
+    position: absolute !important;
+    right: 0 !important;
+    left: auto !important;
+    width: 60% !important;
+    transform: translate(10px, 25%);
+    -webkit-transform: translate(10px, 10%);
+    border:2px solid #cccccc;
+    border-radius:40px 0 0 40px;
+  }
+  .certifyImg {
+    width: auto;
+    display: flex;
+    float: left;
+    margin: 10px;
+    border: 1px solid transparent;
+    padding: 10px;
+    height: 120px;
+    position: relative;
+  }
+  .newCertifyContainer {
+    width:60%;
+    position: fixed;
+    bottom: 25px;
+  }

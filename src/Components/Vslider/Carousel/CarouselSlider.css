@@ -1,0 +1,96 @@
+.cSlider {
+  font-family:"Open Sans", sans-serif;
+  display: block;
+  padding-bottom: 20px;
+  z-index: 999;
+  position: relative;
+}
+
+.cSliderContainer {
+  width: 40%;
+  position: fixed;
+  bottom: 50px;
+  transform: translateY(0px);
+  float: left;
+  display: block;
+}
+
+.img {
+  width: 200px;
+  height: 150px;
+  object-fit: contain;
+  display: flex;
+}
+
+.cSlider img {
+  width: 8vw;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.rec-arrow-left {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  position: relative;
+  color: transparent !important;
+}
+
+.rec-arrow-left:before {
+  content: '\27A4';
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  opacity: 1;
+  color: black;
+  transform: rotate(180deg);
+}
+
+.rec-arrow-right {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  position: relative;
+  color: transparent !important;
+}
+
+.rec-arrow-right:before {
+  content: '\27A4';
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  opacity: 1;
+  color: black;
+}
+
+.rec-arrow-right:disabled,
+.rec-arrow-left:disabled {
+  opacity: 0.5;
+}
+
+.cSlider img {
+  position: relative;
+}
+
+.cSlider img.active {
+  border-bottom: 4px solid #ff0000;
+  box-shadow: none;
+}
+.cSlider span {
+  font-size:21px;
+  font-family:"Open Sans", sans-serif;
+  font-weight: 500;
+}
+@media only screen and (min-width:1320px) {
+  .cSlider span{
+    font-size: 2em;
+  }
+}
+@media only screen and (min-width: 1980px) {
+  .cSlider img {
+    width: 8vw;
+    padding-bottom: 20px;
+    position: relative;
+  }  
+
+}
