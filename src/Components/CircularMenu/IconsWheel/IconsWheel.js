@@ -1,4 +1,3 @@
-﻿
 import { useNavigate } from 'react-router-dom';
 import './IconWheel.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,7 +10,6 @@ function IconsWheel({ page, name, image, rotation, x, active, handleActive, disa
     const dispatch = useDispatch();
 
     const disableNext = useSelector(state => state.wheelItem.disableNext);
-    const activeDesk = useSelector(state => state.desk.activeDeskInfo);
 
     const handleClick = (pageNo) => {
         if (pageNo === 0) {
@@ -45,8 +43,3 @@ function IconsWheel({ page, name, image, rotation, x, active, handleActive, disa
     )
 }
 export default IconsWheel
-
-
-
-
-

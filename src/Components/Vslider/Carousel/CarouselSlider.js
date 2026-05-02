@@ -29,15 +29,6 @@ function CarouselSlider({ onConsoleClick }) {
   // Are we on the listing page (/consoles) or product page (/consoles/:slug)?
   const isListingPage = location.pathname === '/consoles';
 
-  const handleScroll = (currentItem) => {
-    // When carousel scrolls, auto-select the first visible item
-    if (currentItem && currentItem.item) {
-      const id = currentItem.item.id;
-      dispatch(setActiveDesk(id));
-      setImages(id);
-    }
-  };
-
   const handleClick = (id, title) => {
     dispatch(setActiveDesk(id));
     setImages(id);
