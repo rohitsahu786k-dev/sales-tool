@@ -5,12 +5,7 @@ import image3 from '../../../assets/Helpers//02.svg'
 import image4 from '../../../assets/Helpers//03.svg'
 import image5 from '../../../assets/Helpers//04.svg'
 import image6 from '../../../assets/Helpers//05.svg'
-import image7 from '../../../assets/Helpers//06.svg'
-import image8 from '../../../assets/Helpers//07.svg'
 import image9 from '../../../assets/Helpers//08.svg'
-import image10 from '../../../assets/Helpers//09.svg'
-import image11 from '../../../assets/Helpers//10.svg'
-import image12 from '../../../assets/Helpers//11.svg'
 
 export const pages = [
     {

@@ -5,7 +5,7 @@ import { deskList } from "../data/desk"
 const initialState = {
     list: deskList,
     activeDesk: 0,
-    activeDeskInfo: deskList.find((desk) => desk.id == 0),
+    activeDeskInfo: deskList.find((desk) => desk.id === 0),
     disableAllMenu: false,
     disableAllMenuDeskIds: [99,100],
 }
@@ -15,11 +15,13 @@ export const deskSlice = createSlice({
     initialState,
     reducers: {
         setActiveDesk: (state, action) => {
+            const nextDesk = deskList.find((desk) => desk.id === action.payload);
+
             return {
                 ...state,
                 activeDeskInfo: {
-                    ...deskList.find((desk) => desk.id == action.payload),
-                    activeLongDescription: deskList.find((desk) => desk.id == action.payload).longDescription
+                    ...nextDesk,
+                    activeLongDescription: nextDesk.longDescription
                 },
                 activeDesk: action.payload,
                 disableAllMenu: state.disableAllMenuDeskIds.includes(action.payload)

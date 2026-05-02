@@ -65,7 +65,7 @@ export const deskEquipments = [
             {
                 media: OneMedia1,
                 type: "video",
-                description: "<div className=''>" + ""
+                description: "<div className=''>"
                     + "<h4>A single module of 1800 mm can integrate</h4>"
                     + "<ul>"
                     + "<li>2 power distribution units </li>"
@@ -91,7 +91,7 @@ export const deskEquipments = [
             {
                 media: TwoMedia1,
                 type: "video",
-                description: "<div className=''>" + ""
+                description: "<div className=''>"
                 + "<h5>A single module can integrate.</h5>"
                 + "<ul>"
                 + "<li>2 power distribution units  </li>"
@@ -118,7 +118,7 @@ export const deskEquipments = [
             {
                 media: ThreeMedia1,
                 type: "video",
-                description: "<div className=''>" + ""
+                description: "<div className=''>"
                 + "<h5>A single module of 1800 mm can integrate.</h5>"
                 + "<ul>"
                 + "<li>2 power distribution units  </li>"
@@ -160,7 +160,7 @@ export const deskEquipments = [
             {
                 media: FiveMedia1,
                 type: "video",
-                description: "<div className=''>" + ""
+                description: "<div className=''>"
                 + "<h5>A single module can integrate.</h5>"
                 + "<ul>"
                 + "<li>2 power distribution units  </li>"
@@ -186,7 +186,7 @@ export const deskEquipments = [
             {
                 media: SixMedia1,
                 type: "video",
-                description: "<div className=''>" + ""
+                description: "<div className=''>"
                 + "<h5>A single module of 1800 mm can integrate.</h5>"
                 + "<ul>"
                 + "<li>2 power distribution units  </li>"
@@ -212,7 +212,7 @@ export const deskEquipments = [
             {
                 media: SevenMedia1,
                 type: "video",
-                description: "<div className=''>" + ""
+                description: "<div className=''>"
                 + "<h5>A single module of 1800 mm can integrate.</h5>"
                 + "<ul>"
                 + "<li>2 power distribution units  </li>"
@@ -238,7 +238,7 @@ export const deskEquipments = [
             {
                 media: EightMedia1,
                 type: "video",
-                description: "<div className=''>" + ""
+                description: "<div className=''>"
                     + "<h5>A single module of 1800 mm can integrate.</h5>"
                     + "<ul>"
                     + "<li>2 power distribution units  </li>"
@@ -264,7 +264,7 @@ export const deskEquipments = [
             {
                 media: NineMedia1,
                 type: "video",
-                description: "<div className=''>" + ""
+                description: "<div className=''>"
                     + "<h5>A single module with 4 Monitors can integrate </h5>"
                     + "<ul>"
                     + "<li>4 power distribution units </li>"
@@ -298,7 +298,7 @@ export const deskEquipments = [
             {
                 media: ElevenMedia1,
                 type: "video",
-                description: "<div className=''>" + ""
+                description: "<div className=''>"
                     + "<h5>A single module with 4 Monitors can integrate </h5>"
                     + "<ul>"
                     + "<li>4 power distribution units </li>"
@@ -324,7 +324,7 @@ export const deskEquipments = [
             {
                 media: TwelveMedia1,
                 type: "video",
-                description: "<div className=''>" + ""
+                description: "<div className=''>"
                     + "<h5>A single module with 4 Monitors can integrate </h5>"
                     + "<ul>"
                     + "<li>4 power distribution units </li>"
@@ -350,7 +350,7 @@ export const deskEquipments = [
             {
                 media: ThirteenMedia1,
                 type: "video",
-                description: "<div className=''>" + ""
+                description: "<div className=''>"
                     + "<h5>A single module with 4 Monitors can integrate </h5>"
                     + "<ul>"
                     + "<li>4 power distribution units </li>"
@@ -376,7 +376,7 @@ export const deskEquipments = [
             {
                 media: FourteenMedia1,
                 type: "video",
-                description: "<div className=''>" + ""
+                description: "<div className=''>"
                     + "<h5>A single module with 4 Monitors can integrate </h5>"
                     + "<ul>"
                     + "<li>4 power distribution units </li>"

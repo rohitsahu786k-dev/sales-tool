@@ -1,4 +1,4 @@
-
+﻿
 import { useNavigate } from 'react-router-dom';
 import './IconWheel.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,21 +11,21 @@ function IconsWheel({ page, name, image, rotation, x, active, handleActive, disa
     const dispatch = useDispatch();
 
     const disableNext = useSelector(state => state.wheelItem.disableNext);
+    const activeDesk = useSelector(state => state.desk.activeDeskInfo);
 
     const handleClick = (pageNo) => {
-        if (pageNo == 0) {
-            navigate("/Vslider")
+        if (pageNo === 0) {
+            navigate("/consoles")
             dispatch(setDisplayImage(false))
         } else {
             dispatch(setNext())
         }
     }
-    console.log(page)
     return (
         <>
-            <div className={"menu-item " + (page == active ? "active" : "") + " " + (disabled ? "disabled-div" : "")} onClick={(e) => handleActive(page)}
+            <div className={"menu-item " + (page === active ? "active" : "") + " " + (disabled ? "disabled-div" : "")} onClick={(e) => handleActive(page)}
                 style={{ transform: `rotate(${rotation}deg) translate(${0}%)` }}>
-                <img src={image}
+                <img src={image} alt={name}
                     style={
                         {
                             transform: `rotate(${x}deg)`,
@@ -34,11 +34,10 @@ function IconsWheel({ page, name, image, rotation, x, active, handleActive, disa
                         }
                     } />
             </div>
-            <span className={"nameId " + (page == active ? "active" : "") + " " + (disabled ? "disabled-div" : "")} onClick={(e) => { e.stopPropagation(); handleClick(page); }}>
-                {name}
-                <div className="nbutton" style={{ cursor: 'pointer' }}>
-                    {page != 0 ? <button className="btn btn-success-1 circleButton" disabled={disableNext} ><ArrowBack /></button>
-                        : <button className="btn btn-success-1 circleButton"><ArrowLeft /></button>}
+            <span className={"nameId " + (page === active ? "active" : "") + " " + (disabled ? "disabled-div" : "")} onClick={(e) => { e.stopPropagation(); handleClick(page); }}>
+                <div className="nbutton" style={{ cursor: 'pointer', position: 'relative', zIndex: 10 }}>
+                    {page !== 0 ? <button className="circleButton" disabled={disableNext} ><ArrowBack /></button>
+                        : <button className="circleButton"><ArrowLeft /></button>}
                 </div>
             </span>
 
@@ -46,3 +45,8 @@ function IconsWheel({ page, name, image, rotation, x, active, handleActive, disa
     )
 }
 export default IconsWheel
+
+
+
+
+

@@ -6,7 +6,7 @@ function Image({ srcImage }) {
             {
                 srcImage && <div>
                     <div className='imageView'>
-                        <img src={srcImage} className='colorImage' />
+                        <img src={srcImage} alt="" className='colorImage' />
                     </div>
                 </ div>
             }

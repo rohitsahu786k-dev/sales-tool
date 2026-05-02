@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import direction from '../../../assets/color-picker/direction.png'
 
@@ -10,10 +10,8 @@ function Color() {
   const dispatch = useDispatch();
 
   const activeDesk = useSelector(state => state.desk.activeDeskInfo);
-  const [isActive, setIsActive] = useState(false);
   const handleClick = (color) => {
     dispatch(setActiveColor(color))
-    setIsActive(current => !current);
   }
 
   return (
@@ -21,9 +19,9 @@ function Color() {
       { activeDesk.colors.length > 0 &&
         <div className="dots">
         <p className='heading'>Color Options</p>
-        <div className='division'><img src={direction} /></div>
+        <div className='division'><img src={direction} alt="" /></div>
         {activeDesk.colors.map((color, index) => {
-          return <img src={color.icon} key={index} className={activeDesk.activeColor?.name == color.name ? 'active' : ''} onClick={() => handleClick(color)} />
+          return <img src={color.icon} alt={color.name} key={index} className={activeDesk.activeColor?.name === color.name ? 'active' : ''} onClick={() => handleClick(color)} />
         })}
       </div>
       }

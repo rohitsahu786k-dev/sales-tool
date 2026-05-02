@@ -1,76 +1,91 @@
+/* Color Options panel — mobile: inline row, desktop: fixed bottom bar */
+.dots {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  margin: 8px 12px 4px 12px;
+}
+
+@media (min-width: 768px) {
   .dots {
     position: fixed;
-    bottom: 50px;
-    z-index: 99;
-    display: block;
-    transform: translate(25px, 0px);
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 10px 24px;
+    border-radius: 20px;
+    gap: 10px;
   }
+}
 
+.dots .heading {
+  font-size: 12px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (min-width: 768px) {
+  .dots .heading {
+    font-size: 14px;
+  }
+}
+
+.dots img {
+  width: 44px;
+  height: 44px;
+  padding: 3px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  margin: 0;
+  transition: all 0.2s ease-in-out;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
   .dots img {
-    width: 80px;
+    width: 70px;
+    height: 70px;
     padding: 5px;
-    cursor: pointer;
-    border: 1px solid transparent;
-    border-radius: 10px;
-    margin: 2px;
-    transition: all ease-in-out 0.5;
-    -webkit-transition: all ease-in-out 0.5;
   }
+}
 
-  .dots img.active {
-    border: 2px solid #ff0000;
-    border-radius: 10px;
-    transition: all ease-in-out 0.5;
-    -webkit-transition: all ease-in-out 0.5;
-  }
+.dots img.active {
+  border-color: #EA2D2D;
+  border-radius: 8px;
+}
 
-  .division {
-    float: left;
-  }
+.dots img:hover {
+  border-color: #aaa;
+  transform: scale(1.06);
+}
 
-  .heading {
-    font-size: 24px;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 600;
-  }
+.division {
+  display: flex;
+  align-items: center;
+}
 
-  .imageView img {
-    width: 100vw;
-    left: 0;
-    position: absolute;
-
-  }
-
-  .deskLayout {
-    position: absolute !important;
-    right: 100px !important;
-    left: auto !important;
-    width: 60% !important;
-    transform: translate(10px, 25%);
-    -webkit-transform: translate(10px, 10%);
-  }
-  .deskFeat{
-    position: absolute !important;
-    right: 0 !important;
-    left: auto !important;
-    width: 60% !important;
-    transform: translate(10px, 25%);
-    -webkit-transform: translate(10px, 10%);
-    border:2px solid #cccccc;
-    border-radius:40px 0 0 40px;
-  }
-  .certifyImg {
-    width: auto;
-    display: flex;
-    float: left;
-    margin: 10px;
-    border: 1px solid transparent;
-    padding: 10px;
-    height: 120px;
-    position: relative;
-  }
-  .newCertifyContainer {
-    width:60%;
-    position: fixed;
-    bottom: 25px;
-  }
+.division img {
+  width: 22px !important;
+  height: auto !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}

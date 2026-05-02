@@ -1,63 +1,135 @@
-.App {
-  text-align: center;
+/* ============================================
+   GLOBAL RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
-.frame {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  position: relative;
-}
+/* ============================================
+   APP FRAME
+   ============================================ */
+.App { text-align: center; }
 
 .main-back {
-  background-color: #e7e7e7;
+  background-color: #E7E7E7;
   width: 100%;
   position: relative;
+  min-height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Mobile: stack columns vertically */
+.frame {
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
+/* Desktop: side by side */
+@media (min-width: 768px) {
+  .frame {
+    flex-direction: row;
   }
 }
 
+/* ============================================
+   PRODUCT IMAGE & VIDEO (right panel)
+   ============================================ */
 .product {
   width: 100%;
-  position: absolute;
-  left: 0;
+  height: 100%;
+  display: block;
+  object-fit: contain;
 }
 
+
+
+.imageView,
+.videoView {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+/* Color images (swatches in right panel) */
+.colorImage {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain;
+  position: relative !important;
+}
+
+/* ============================================
+   HEADER AREAS (heads / hamburger / main-area)
+   ============================================ */
+.heads {
+  position: relative;
+  padding: 16px 16px 0 16px;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .heads {
+    padding: 40px 30px 0 30px;
+  }
+}
+
+.heads .hamburger h1 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 6px 0;
+}
+
+.main-area h1 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 8px 0;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .main-area h1 {
+    font-size: 2.4rem;
+  }
+}
+
+.main-area span,
+.main-area p {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 13px !important;
+  color: #444;
+  line-height: 1.65;
+  display: block;
+  max-width: 520px;
+}
+
+/* ============================================
+   DISABLED DIV
+   ============================================ */
 .disabled-div {
   pointer-events: none;
   opacity: 0.4 !important;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }

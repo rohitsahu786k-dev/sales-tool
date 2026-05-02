@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { BurgerIcon } from '../../../svgAssests'
 
 
 function Header2(props) {

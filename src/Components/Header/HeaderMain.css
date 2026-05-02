@@ -1,199 +1,138 @@
-.heads {
-  position: relative;
-  transform: translate(0, 0);
-  top: 50px;
-  width: 100%;
-  left: 50px;
-  z-index: 9;
-}
-
+/* ============================
+   HEADER MAIN — Mobile First
+   ============================ */
 .back-img {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
 }
 
 .backFeel {
   background-image: url('../../assets/backScreen.jpg');
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   position: absolute;
   background-size: cover;
+  z-index: 0;
 }
 
-.tableTool {
-  background-image: url('../../assets/cSlider/desk1.png');
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  width: 100%;
-  box-shadow: 2px 2px 2px #cccccc;
-  filter: blur(10px);
+.heads {
+  position: relative;
+  z-index: 9;
+  padding: 24px 16px 0 16px;
+  box-sizing: border-box;
 }
 
-.heads .hamburger {
-  display: flex;
-  float: left;
-  width: 100%;
-  align-items: center;
+@media (min-width: 768px) {
+  .heads {
+    padding: 50px 50px 0 50px;
+  }
 }
 
 .heads .hamburger h1 {
-  font-family: "Open Sans", sans-serif;
-  font-size:2.4em;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 11px;
   font-weight: 700;
-}
-
-.main-area {
-  width: 100%;
-  transform: translate(0px, 25px);
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 8px 0;
 }
 
 .main-area h1 {
   font-weight: 800;
-  font-family: "Open Sans", sans-serif;
-  font-size: 2.4em;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 1.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
+  color: #111;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+  .main-area h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-area h1 {
+    font-size: 3.5rem;
+  }
 }
 
 .main-area h2 {
-  font-weight: 400;
-  font-family: "Open Sans", sans-serif;
-  font-size:1.8em;
+  font-weight: 500;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .main-area h2 {
+    font-size: 1.25rem;
+  }
 }
 
 .main-area p {
-  font-weight: 400;
-  font-family: "Open Sans", sans-serif;
-  font-size:1.4em;
+  font-weight: 500;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 13px !important;
   width: 100%;
-  background-color: #ffffff;
-  padding: 25px;
-  border-radius: 20px;
-  transform: translate(0px, 25px);
-  margin: 25px 0
-}
-.main-area span {
-  font-weight: 400;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.4em;
-  width: 85%;
-  padding: 0px;
-  text-align: justify;
-  margin: 0 0 50px 0;
-  display: block;
-  line-height: 1.6em;
+  max-width: 540px;
+  background-color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  padding: 16px;
+  border-radius: 14px;
+  margin: 16px 0;
+  line-height: 1.65;
+  color: #4b5563;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
-#myBtn {
-  font-size:1.6em;
-  border: none;
-  left: 0;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-}
-
-.btn-danger {
-  border-radius: 50px;
-  width: 25%;
-  font-size: 1.4em;
-  padding: 10px;
-  font-family: "Open Sans", sans-serif;
-  transform: translate(0px, 25px);
-}
-
+/* Logo bottom left */
 .wSLogo {
-  position: absolute;
-  bottom: 50px;
-  left: 50px;
+  position: fixed;
+  bottom: 20px;
+  left: 16px;
+  z-index: 20;
 }
 
 .wSLogo img {
-  width: 80px;
+  width: 110px;
+  transition: width 0.3s;
 }
-.svgBurgerIcon {
-  width:2.5em;
-  height:2.5em;
-}
-@media only screen and (min-width: 1320px) {
-  .heads .hamburger h1 {
-    font-size: 2em;
-  }
-  .main-area h1 {
-    font-size: 2em;
-    font-weight: 800;
-  }
-  .main-area span {
-    font-size:1.8em;
-    line-height: 1.6em;
-  }
-  .main-area p {
-    font-size: 1.2em;
-    font-weight: 400;
+
+@media (min-width: 768px) {
+  .wSLogo {
+    bottom: 30px;
+    left: 40px;
   }
   .wSLogo img {
-        width:80px
-  }
-  .svgBurgerIcon {
-    width:1.5em;
-    height:1.5em;
-  }
-  .heads .hamburger h1{
-    font-size: 2em;
+    width: 160px;
   }
 }
-@media only screen and (min-width: 1540px) {
-  .heads .hamburger h1 {
-    font-size:2em;
-  }
-  .main-area h1 {
-    font-size: 2.4em;
-    font-weight: 800;
-  }
-  .main-area span {
-    font-size:21px;
-    line-height: 1.6em;
-  }
-  .main-area p {
-    font-size:1.4em;
-    font-weight: 400;
-  }
+
+@media (min-width: 1280px) {
   .wSLogo img {
-        width:80px
-  }
-  .svgBurgerIcon {
-    width:1.5em;
-    height:1.5em;
-  }
-  .heads .hamburger h1{
-    font-size:2.4em;
+    width: 200px;
   }
 }
-@media only screen and (min-width: 1980px) {
-  .heads .hamburger h1 {
-    font-size: 3.2em;
-  }
-  .main-area h1 {
-    font-size:3em;
-    font-weight: 800;
-  }
-  .main-area span {
-    font-size:1.6em;
-    line-height: 1.6em;
-  }
-  .main-area p {
-    font-size: 1.4em;
-    font-weight: 400;
-  }
-  .wSLogo img {
-        width:120px
-  }
+
+/* Start Now button */
+.main-area button {
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 8px 20px rgba(234, 45, 45, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.main-area button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(234, 45, 45, 0.45);
 }

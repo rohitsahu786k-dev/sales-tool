@@ -1,24 +1,43 @@
-/*items-close*/
+/* ===== CIRCULAR MENU ===== */
+
+/* Outer ring — mobile: centered, desktop: fixed bottom-left */
 .menu {
-  position: fixed;
-  width: 300px;
-  height: 300px;
+  position: relative;
+  width: 250px;
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
   transform: rotate(90deg);
-  bottom: 30px;
+  margin: 40px auto 20px auto;
   z-index: 9;
   padding: 0;
   border-radius: 100%;
   background-color: transparent;
-  left: 50px;
 }
 
+@media (min-width: 768px) {
+  .menu {
+    position: fixed;
+    bottom: 30px;
+    left: 50px;
+    width: 300px;
+    height: 300px;
+    margin: 0;
+  }
+}
+
+/* Active ring gets shadow */
+.menu.active {
+  box-shadow: 0 4px 16px 4px #cccccc;
+  background-color: #ffffff;
+}
+
+/* Inner white circle (toggle) */
 .menu .toggle {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   background: #ffffff;
   border-radius: 100%;
   display: flex;
@@ -27,86 +46,41 @@
   font-size: 1em;
   transition: 0.5s all ease-in-out;
   transform: rotate(270deg);
+  overflow: hidden;
+  box-shadow: inset 0 0 10px 2px #e0e0e0;
 }
 
-.menu .toggle img {
-  text-decoration: none;
-  color: #747474;
-}
-
-.menu .toggle img {
-  position: relative;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  transform: translate(0px, 20px);
-}
-
-.menu .toggle img span:before {
-  transition: all ease-in-out 0.00015s;
-  -webkit-transition: all ease-in-out 0.00015s;
-  content: "+";
-  color: #ff0000;
-  top: 25px;
-  right: 0;
-  left: 0;
-  font-size: 4em;
-}
-
-.menu.active {
-  box-shadow: 0 4px 16px 4px #cccccc;
-  background-color: #ffffff;
+@media (min-width: 768px) {
+  .menu .toggle {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 .menu .toggle.active {
   transform: rotate(270deg);
   box-shadow: inset 0 0 10px 4px #cccccc, 0 0 0px 10px #ffffff;
-  background: #e9e9e9;
-  color: #ffffff;
+  background: #f5f5f5;
 }
 
-.menu .toggle.active img span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border-color: #454545;
-  background: #e3e3e3;
-  border: 1px solid;
-  transform: translate(0px, 20px);
+/* Console image inside toggle — HIDDEN now, kept for reference */
+.console-center-img {
+  display: none;
 }
 
-.menu .toggle.active img span:before {
-  content: "Back";
-  position: absolute;
-  top: 25px;
-  right: 0;
-  left: 0;
-  font-size: 1em;
-  transition: all ease-in-out 0.00015s;
-  -webkit-transition: all ease-in-out 0.00015s;
-}
-
-.menu .toggle img {
-  text-align: center;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  transform: translate(0%, 20%);
-}
-
+/* Each icon item around the ring */
 .menu .menu-item {
   position: absolute;
   left: 7px;
   list-style: none;
-  transform-origin: 141px;
+  transform-origin: 113px;
   z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .menu .menu-item {
+    transform-origin: 141px;
+  }
 }
 
 .menu .menu-item:hover {
@@ -126,11 +100,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   font-size: 1.75em;
   color: #cccccc;
   transform: rotate(calc(-120deg * var(--i))) translateX(0px);
+}
+
+@media (min-width: 768px) {
+  .menu .menu-item img {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .menu .menu-item img svg {
@@ -152,12 +133,13 @@
   border-color: #ffffff;
 }
 
+/* Indicator arrow */
 .indicator {
   position: absolute;
-  width: 83px;
-  height: 50px;
+  width: 58px;
+  height: 36px;
   transform-origin: right;
-  left: calc(50% + 20px);
+  left: calc(50% + 14px);
   pointer-events: none;
   transition: 0.5s;
   transform: rotate(calc(7.2deg * var(--i))) translateX(0px);
@@ -166,197 +148,158 @@
 .indicator::before {
   content: "";
   position: absolute;
-  width: 120px;
-  height: 225px;
+  width: 82px;
+  height: 154px;
   background-image: url('../../../assets/Helpers/indicator.svg');
   background-position: center 100%;
-  background-size: 180px;
+  background-size: 124px;
   background-repeat: no-repeat;
-  top: 15.5px;
-  left: 100px;
+  top: 11px;
+  left: 68px;
   transform: 0.5s;
   transition: 0.5s;
   opacity: 0;
-  /*border-bottom: 80px solid #ff0000;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;*/
 }
 
 .menu.active .indicator::before {
   opacity: 1;
-  top: -86.5px;
-  left: -130.5px;
+  top: -59px;
+  left: -89px;
   transform: rotate(270deg);
 }
 
-.menu .menu-item:nth-child(3).active~.indicator {
-  transform: translateX(-103px) rotate(0deg);
+.menu .menu-item:nth-child(3).active~.indicator  { transform: translateX(-70px) rotate(0deg); }
+.menu .menu-item:nth-child(6).active~.indicator  { transform: translateX(-70px) rotate(50.3deg); }
+.menu .menu-item:nth-child(9).active~.indicator  { transform: translateX(-70px) rotate(102.15deg); }
+.menu .menu-item:nth-child(12).active~.indicator { transform: translateX(-70px) rotate(154.28deg); }
+.menu .menu-item:nth-child(15).active~.indicator { transform: translateX(-70px) rotate(203.51deg); }
+.menu .menu-item:nth-child(18).active~.indicator { transform: translateX(-70px) rotate(257.14deg); }
+.menu .menu-item:nth-child(21).active~.indicator { transform: translateX(-70px) rotate(307.57deg); }
+
+@media (min-width: 768px) {
+  .indicator {
+    width: 83px;
+    height: 50px;
+    left: calc(50% + 20px);
+  }
+
+  .indicator::before {
+    width: 120px;
+    height: 225px;
+    background-size: 180px;
+    top: 15.5px;
+    left: 100px;
+  }
+
+  .menu.active .indicator::before {
+    top: -86.5px;
+    left: -130.5px;
+  }
+
+  .menu .menu-item:nth-child(3).active~.indicator  { transform: translateX(-103px) rotate(0deg); }
+  .menu .menu-item:nth-child(6).active~.indicator  { transform: translateX(-103px) rotate(50.3deg); }
+  .menu .menu-item:nth-child(9).active~.indicator  { transform: translateX(-103px) rotate(102.15deg); }
+  .menu .menu-item:nth-child(12).active~.indicator { transform: translateX(-103px) rotate(154.28deg); }
+  .menu .menu-item:nth-child(15).active~.indicator { transform: translateX(-103px) rotate(203.51deg); }
+  .menu .menu-item:nth-child(18).active~.indicator { transform: translateX(-103px) rotate(257.14deg); }
+  .menu .menu-item:nth-child(21).active~.indicator { transform: translateX(-103px) rotate(307.57deg); }
 }
 
-.menu .menu-item:nth-child(6).active~.indicator {
-  transform: translateX(-103px) rotate(50.3deg);
-}
-
-.menu .menu-item:nth-child(9).active~.indicator {
-  transform: translateX(-103px) rotate(102.15deg);
-}
-
-.menu .menu-item:nth-child(12).active~.indicator {
-  transform: translateX(-103px) rotate(154.28deg);
-}
-
-.menu .menu-item:nth-child(15).active~.indicator {
-  transform: translateX(-103px) rotate(203.51deg);
-}
-
-.menu .menu-item:nth-child(18).active~.indicator {
-  transform: translateX(-103px) rotate(257.14deg);
-}
-
-.menu .menu-item:nth-child(21).active~.indicator {
-  transform: translateX(-103px) rotate(307.57deg);
-}
-
+/* ===== nameId: the arrow button overlay — CENTERED in circle ===== */
 .nameId {
   position: absolute;
   display: none;
 }
 
 .nameId.active {
-  display: block;
-  transform: rotate(270deg) translateY(25%);
-  -webkit-transform: rotate(270deg) translateY(25%);
-  width: 125px;
-  height: 125px;
+  display: flex;
+  position: absolute;
+  /* Centered using top/left 50% + negative margin trick — rotation-safe */
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin-top: -40px;
+  margin-left: -40px;
+  transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
   text-align: center;
   justify-content: center;
-  left: 18%;
-  background: #fff;
-  border-radius: 50%;
-  padding: 2em 0;
-  box-shadow: 0px 1px 4px 4px #e1e1e1;
+  align-items: center;
+  background: transparent;
+  box-shadow: none;
+  z-index: 50;
+  pointer-events: auto;
+}
+
+@media (min-width: 768px) {
+  .nameId.active {
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+  }
 }
 
 .nameId.active:after {
-  content: '';
-  width: 200px;
-  height: 200px;
-  background-color: #070707;
+  display: none;
 }
 
+/* ===== Arrow button ===== */
 .circleButton {
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  color: #343434;
+  width: 60px;
+  height: 60px;
+  color: #111111;
   background-color: #ffffff;
-  border-color: #ffffff;
+  border: 2px solid #e0e0e0;
   opacity: 1;
-  box-shadow: none;
-  font-size: 28px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
-.btn-success-1:hover,
-.btn-success-1:active,
-.btn-success-1:focus,
-.btn-success-1:active:focus {
-  color: #343434;
+@media (min-width: 768px) {
+  .circleButton {
+    width: 72px;
+    height: 72px;
+    font-size: 34px;
+  }
+}
+
+.circleButton:hover {
+  color: #EA2D2D;
+  border-color: #EA2D2D;
+  box-shadow: 0 4px 16px rgba(234,45,45,0.2);
+  transform: scale(1.08);
+}
+
+.circleButton:active,
+.circleButton:focus {
+  color: #111;
   background-color: #ffffff;
-  border-color: #ffffff;
+  border-color: #e0e0e0;
   box-shadow: none;
-
 }
 
-.btn-success-1.disabled,
-.btn-success-1:disabled {
+.circleButton.disabled,
+.circleButton:disabled {
   opacity: 0.2;
   background-color: #ffffff;
-  border-color: #ffffff;
-  color: #000000
+  border-color: #e0e0e0;
+  color: #000000;
+  transform: none;
 }
-/* 
-@media only screen and (min-width: 1620px) {
-  .menu {
-    width: 500px;
-    height: 500px;
-  }
 
-  .menu .toggle {
-    width: 350px;
-    height: 350px;
-  }
-
-  .menu .menu-item {
-    transform-origin: 235px;
-    left: 16px;
-  }
-
-  .nameId.active {
-    width: 210px;
-    height: 210px;
-    font-size: 1.8em;
-  }
-  .circleButton {
-    font-size: 2em;
-    width:auto;
-  }
-
-  .menu .menu-item img {
-    width: 50px;
-    height: 50px;
-  }
-  .indicator {
-
-  }
-  .indicator::before{
-    background-size: 220px;
-  }
-  .menu.active .indicator::before {
-    left: -200.5px;
-  }
-} */
-
-@media only screen and (min-width: 1980px) {
-  .menu {
-    width: 450px;
-    height: 450px;
-  }
-
-  .menu .toggle {
-    width: 300px;
-    height: 300px;
-  }
-
-  .menu .menu-item {
-    transform-origin: 212px;
-    left: 12px;
-  }
-
-  .nameId.active {
-    width: 180px;
-    height: 180px;
-    font-size: 1.6em;
-  }
-
-  .menu .menu-item img {
-    width: 45px;
-    height: 45px;
-  }
-
-  .indicator {
-
-  }
-
-  .circleButton {}
-
-  .indicator::before {
-    width: 150px;
-    height: 240px;
-    background-size: 280px;
-  }
-
-  .menu.active .indicator::before {
-    top: -95.5px;
-    left: -175.5px;
-  }
+/* nbutton wrapper — center the button */
+.nbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }

@@ -30,7 +30,7 @@ export const WheelItemSlice = createSlice({
                 dnext = true
             } else if (state.currentIndex < state.childItem.length) {
                 cindex = state.currentIndex + 1
-                dnext = (cindex == (state.childItem.length - 1))
+                dnext = (cindex === (state.childItem.length - 1))
             }
             return {
                 ...state,

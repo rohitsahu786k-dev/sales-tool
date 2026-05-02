@@ -2,7 +2,6 @@
 import IconsWheel from '../IconsWheel/IconsWheel';
 
 function MenuItems({ pages, handleActive, active, disableAllMenu }) {
-  console.log(pages)
   return (
     <>
       <div key={pages.page + "menu"} className="menu-button"></div>
@@ -17,7 +16,7 @@ function MenuItems({ pages, handleActive, active, disableAllMenu }) {
           transitionDelay={1 * 75}
           x={pages.deg}
           handleActive={handleActive}
-          disabled={(disableAllMenu ? (pages.page == 0 ? false : true) : pages.disable)}
+          disabled={(disableAllMenu ? pages.page !== 0 : pages.disable)}
         />
         
         // ))
