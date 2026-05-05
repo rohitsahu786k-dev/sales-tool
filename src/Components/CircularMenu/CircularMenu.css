@@ -11,7 +11,7 @@
   z-index: 10;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .circular-left {
     width: 42%;
     padding: 40px 20px 0 30px;
@@ -27,7 +27,7 @@
   overflow: hidden;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .circular-right {
     width: 100%;
     min-height: 100vh;
@@ -53,7 +53,7 @@
   width: 90px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .wSLogoIn {
     top: 30px;
     right: 30px;
@@ -86,7 +86,7 @@
   display: block;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .circular-right .imageView,
   .circular-right .videoView {
     min-height: 100vh;
@@ -124,14 +124,24 @@
 
 @media (min-width: 768px) {
   .dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dots {
+    position: fixed;
+    right: clamp(16px, 4vw, 80px);
+    bottom: clamp(16px, 3vh, 28px);
+    left: clamp(380px, 38vw, 540px);
+    width: auto;
+    max-width: calc(100vw - clamp(380px, 38vw, 540px) - clamp(16px, 4vw, 80px));
+    transform: none;
     margin: 0;
-    padding: 10px 20px;
+    padding: clamp(8px, 1vw, 12px) clamp(14px, 2vw, 24px);
     border-radius: 20px;
-    gap: 10px;
+    gap: clamp(8px, 1vw, 14px);
+    justify-content: center;
   }
 }
 
@@ -155,10 +165,10 @@
   object-fit: contain;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .dots img {
-    width: 70px;
-    height: 70px;
+    width: clamp(52px, 4.8vw, 70px);
+    height: clamp(52px, 4.8vw, 70px);
   }
 }
 
@@ -196,7 +206,7 @@
   top: auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .iconChildItems video {
     width: 100%;
     height: 100vh;
@@ -289,7 +299,7 @@
   display: block;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .newCertifyContainer {
     height: 100%;
     min-height: unset;
@@ -333,7 +343,7 @@
   border-radius: 20px 0 0 20px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .deskLayout {
     position: absolute !important;
     right: 100px !important;

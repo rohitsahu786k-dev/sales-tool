@@ -15,18 +15,29 @@
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.10);
   margin: 8px 12px 4px 12px;
+  max-width: calc(100% - 24px);
 }
 
 @media (min-width: 768px) {
   .dots {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dots {
     position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: clamp(16px, 4vw, 80px);
+    bottom: clamp(16px, 3vh, 28px);
+    left: clamp(380px, 38vw, 540px);
+    width: auto;
+    max-width: calc(100vw - clamp(380px, 38vw, 540px) - clamp(16px, 4vw, 80px));
+    transform: none;
     margin: 0;
-    padding: 10px 24px;
+    padding: clamp(8px, 1vw, 12px) clamp(14px, 2vw, 24px);
     border-radius: 20px;
-    gap: 10px;
+    gap: clamp(8px, 1vw, 14px);
+    justify-content: center;
   }
 }
 
@@ -61,9 +72,16 @@
 
 @media (min-width: 768px) {
   .dots img {
-    width: 70px;
-    height: 70px;
+    width: 56px;
+    height: 56px;
     padding: 5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dots img {
+    width: clamp(52px, 4.8vw, 70px);
+    height: clamp(52px, 4.8vw, 70px);
   }
 }
 
