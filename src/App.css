@@ -94,7 +94,7 @@ html, body {
 
 .main-area h1 {
   font-family: 'Be Vietnam Pro', sans-serif;
-  font-size: 1.6rem;
+  font-size: 42px;
   font-weight: 800;
   color: #111;
   margin: 0 0 8px 0;
@@ -102,16 +102,10 @@ html, body {
   text-transform: uppercase;
 }
 
-@media (min-width: 768px) {
-  .main-area h1 {
-    font-size: 2.4rem;
-  }
-}
-
 .main-area span,
 .main-area p {
   font-family: 'Be Vietnam Pro', sans-serif;
-  font-size: 13px !important;
+  font-size: 14px !important;
   color: #444;
   line-height: 1.65;
   display: block;

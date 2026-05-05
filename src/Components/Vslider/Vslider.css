@@ -72,7 +72,7 @@
   .explore-btn {
     margin: 16px 0 0 30px;
     padding: 12px 32px;
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
@@ -253,13 +253,13 @@
 
 @media (min-width: 768px) {
   .vSlider .rec-item-wrapper span {
-    font-size: 15px;
+    font-size: 13px;
   }
 }
 
 @media (min-width: 1024px) {
   .vSlider .rec-item-wrapper span {
-    font-size: clamp(14px, 1.25vw, 17px);
+    font-size: 13px;
     line-height: 1.55;
   }
 }
@@ -328,7 +328,7 @@
 
 @media (min-width: 768px) {
   .cSlider span {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 

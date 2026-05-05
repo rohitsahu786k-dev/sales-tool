@@ -21,8 +21,8 @@
     position: fixed;
     bottom: 30px;
     left: 50px;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     margin: 0;
   }
 }
@@ -52,8 +52,8 @@
 
 @media (min-width: 1024px) {
   .menu .toggle {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
   }
 }
 
@@ -79,7 +79,7 @@
 
 @media (min-width: 1024px) {
   .menu .menu-item {
-    transform-origin: 141px;
+    transform-origin: 113px;
   }
 }
 
@@ -109,8 +109,8 @@
 
 @media (min-width: 1024px) {
   .menu .menu-item img {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
   }
 }
 
@@ -178,31 +178,31 @@
 
 @media (min-width: 1024px) {
   .indicator {
-    width: 83px;
-    height: 50px;
-    left: calc(50% + 20px);
+    width: 58px;
+    height: 36px;
+    left: calc(50% + 14px);
   }
 
   .indicator::before {
-    width: 120px;
-    height: 225px;
-    background-size: 180px;
-    top: 15.5px;
-    left: 100px;
+    width: 82px;
+    height: 154px;
+    background-size: 124px;
+    top: 11px;
+    left: 68px;
   }
 
   .menu.active .indicator::before {
-    top: -86.5px;
-    left: -130.5px;
+    top: -59px;
+    left: -89px;
   }
 
-  .menu .menu-item:nth-child(3).active~.indicator  { transform: translateX(-103px) rotate(0deg); }
-  .menu .menu-item:nth-child(6).active~.indicator  { transform: translateX(-103px) rotate(50.3deg); }
-  .menu .menu-item:nth-child(9).active~.indicator  { transform: translateX(-103px) rotate(102.15deg); }
-  .menu .menu-item:nth-child(12).active~.indicator { transform: translateX(-103px) rotate(154.28deg); }
-  .menu .menu-item:nth-child(15).active~.indicator { transform: translateX(-103px) rotate(203.51deg); }
-  .menu .menu-item:nth-child(18).active~.indicator { transform: translateX(-103px) rotate(257.14deg); }
-  .menu .menu-item:nth-child(21).active~.indicator { transform: translateX(-103px) rotate(307.57deg); }
+  .menu .menu-item:nth-child(3).active~.indicator  { transform: translateX(-70px) rotate(0deg); }
+  .menu .menu-item:nth-child(6).active~.indicator  { transform: translateX(-70px) rotate(50.3deg); }
+  .menu .menu-item:nth-child(9).active~.indicator  { transform: translateX(-70px) rotate(102.15deg); }
+  .menu .menu-item:nth-child(12).active~.indicator { transform: translateX(-70px) rotate(154.28deg); }
+  .menu .menu-item:nth-child(15).active~.indicator { transform: translateX(-70px) rotate(203.51deg); }
+  .menu .menu-item:nth-child(18).active~.indicator { transform: translateX(-70px) rotate(257.14deg); }
+  .menu .menu-item:nth-child(21).active~.indicator { transform: translateX(-70px) rotate(307.57deg); }
 }
 
 /* ===== nameId: the arrow button overlay — CENTERED in circle ===== */
@@ -234,10 +234,10 @@
 
 @media (min-width: 1024px) {
   .nameId.active {
-    width: 100px;
-    height: 100px;
-    margin-top: -50px;
-    margin-left: -50px;
+    width: 80px;
+    height: 80px;
+    margin-top: -40px;
+    margin-left: -40px;
   }
 }
 
@@ -265,9 +265,9 @@
 
 @media (min-width: 1024px) {
   .circleButton {
-    width: 72px;
-    height: 72px;
-    font-size: 34px;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
   }
 }
 
