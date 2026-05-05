@@ -53,6 +53,12 @@
   width: 90px;
 }
 
+@media (max-width: 767px) {
+  .circular-right .wSLogoIn {
+    display: none;
+  }
+}
+
 @media (min-width: 1024px) {
   .wSLogoIn {
     top: 30px;
