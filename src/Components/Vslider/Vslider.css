@@ -10,7 +10,7 @@
   min-height: 100vh;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .vslider-page {
     flex-direction: row;
   }
@@ -27,11 +27,11 @@
   flex-direction: column;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .vslider-left {
     width: 42%;
     min-height: 100vh;
-    padding: 0;
+    padding: 0 0 210px 0;
   }
 }
 
@@ -76,6 +76,12 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .explore-btn {
+    margin-bottom: 18px;
+  }
+}
+
 /* ---- RIGHT PANEL ---- */
 .vslider-right {
   width: 100%;
@@ -85,7 +91,7 @@
   overflow: hidden;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .vslider-right {
     width: 100%;
     min-height: 100vh;
@@ -114,7 +120,7 @@
   cursor: pointer;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
 
   .vslider-right img.product,
   .vslider-right video.product {
@@ -140,7 +146,7 @@
   width: 90px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .wSLogoIn {
     top: 30px;
     right: 30px;
@@ -161,11 +167,11 @@
   box-sizing: border-box;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .vSlider {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
+    top: auto;
+    transform: none;
     width: 40%;
     margin-top: 0;
     padding: 0 0 0 30px;
@@ -213,6 +219,12 @@
   overflow: hidden;
 }
 
+@media (min-width: 1024px) {
+  .sideSliderList {
+    max-height: 132px;
+  }
+}
+
 .sideSliderList .rec-arrow,
 .sideSliderList .rec-pagination {
   display: none !important;
@@ -245,6 +257,13 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .vSlider .rec-item-wrapper span {
+    font-size: clamp(14px, 1.25vw, 17px);
+    line-height: 1.55;
+  }
+}
+
 /* ---- Carousel bottom thumbnails ---- */
 .cSlider {
   font-family: 'Be Vietnam Pro', sans-serif;
@@ -261,7 +280,7 @@
   box-sizing: border-box;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .cSliderContainer {
     width: 40%;
     position: fixed;
@@ -282,7 +301,7 @@
   cursor: pointer;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .cSlider img {
     width: 7vw;
     max-width: 120px;

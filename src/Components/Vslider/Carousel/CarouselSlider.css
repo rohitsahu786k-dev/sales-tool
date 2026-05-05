@@ -19,7 +19,7 @@
 }
 
 /* Desktop: fixed at bottom-left */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .cSliderContainer {
     width: 40%;
     position: fixed;
@@ -62,11 +62,18 @@
 
 @media (min-width: 768px) {
   .cSlider img {
-    width: 8vw;
-    max-width: 130px;
+    width: 14vw;
+    max-width: 110px;
   }
   .cSlider span {
     font-size: 13px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cSlider img {
+    width: clamp(78px, 7vw, 120px);
+    max-width: 120px;
   }
 }
 
