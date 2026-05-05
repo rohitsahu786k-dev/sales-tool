@@ -48,7 +48,6 @@
   transform: rotate(270deg);
   overflow: hidden;
   box-shadow: inset 0 0 10px 2px #e0e0e0;
-  z-index: 2;
 }
 
 @media (min-width: 1024px) {
@@ -75,7 +74,7 @@
   left: 7px;
   list-style: none;
   transform-origin: 113px;
-  z-index: 3;
+  z-index: 1;
 }
 
 @media (min-width: 1024px) {
@@ -137,63 +136,73 @@
 /* Indicator arrow */
 .indicator {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  transform-origin: center;
+  width: 58px;
+  height: 36px;
+  transform-origin: right;
+  left: calc(50% + 14px);
   pointer-events: none;
   transition: 0.5s;
-  z-index: 1;
+  transform: rotate(calc(7.2deg * var(--i))) translateX(0px);
 }
 
 .indicator::before {
   content: "";
   position: absolute;
-  width: 72px;
-  height: 82px;
-  background: #ff0000;
-  clip-path: polygon(14% 0, 86% 0, 100% 100%, 0 100%);
-  top: -2px;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 82px;
+  height: 154px;
+  background-image: url('../../../assets/Helpers/indicator.svg');
+  background-position: center 100%;
+  background-size: 124px;
+  background-repeat: no-repeat;
+  top: 11px;
+  left: 68px;
+  transform: 0.5s;
   transition: 0.5s;
   opacity: 0;
 }
 
 .menu.active .indicator::before {
   opacity: 1;
-  transform: translateX(-50%);
+  top: -59px;
+  left: -89px;
+  transform: rotate(270deg);
 }
 
-.menu .menu-item:nth-child(3).active~.indicator  { transform: rotate(0deg); }
-.menu .menu-item:nth-child(6).active~.indicator  { transform: rotate(50.3deg); }
-.menu .menu-item:nth-child(9).active~.indicator  { transform: rotate(102.15deg); }
-.menu .menu-item:nth-child(12).active~.indicator { transform: rotate(154.28deg); }
-.menu .menu-item:nth-child(15).active~.indicator { transform: rotate(203.51deg); }
-.menu .menu-item:nth-child(18).active~.indicator { transform: rotate(257.14deg); }
-.menu .menu-item:nth-child(21).active~.indicator { transform: rotate(307.57deg); }
+.menu .menu-item:nth-child(3).active~.indicator  { transform: translateX(-70px) rotate(0deg); }
+.menu .menu-item:nth-child(6).active~.indicator  { transform: translateX(-70px) rotate(50.3deg); }
+.menu .menu-item:nth-child(9).active~.indicator  { transform: translateX(-70px) rotate(102.15deg); }
+.menu .menu-item:nth-child(12).active~.indicator { transform: translateX(-70px) rotate(154.28deg); }
+.menu .menu-item:nth-child(15).active~.indicator { transform: translateX(-70px) rotate(203.51deg); }
+.menu .menu-item:nth-child(18).active~.indicator { transform: translateX(-70px) rotate(257.14deg); }
+.menu .menu-item:nth-child(21).active~.indicator { transform: translateX(-70px) rotate(307.57deg); }
 
 @media (min-width: 1024px) {
   .indicator {
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    width: 58px;
+    height: 36px;
+    left: calc(50% + 14px);
   }
 
   .indicator::before {
-    width: 72px;
-    height: 82px;
-    top: -2px;
-    left: 50%;
+    width: 82px;
+    height: 154px;
+    background-size: 124px;
+    top: 11px;
+    left: 68px;
   }
 
-  .menu .menu-item:nth-child(3).active~.indicator  { transform: rotate(0deg); }
-  .menu .menu-item:nth-child(6).active~.indicator  { transform: rotate(50.3deg); }
-  .menu .menu-item:nth-child(9).active~.indicator  { transform: rotate(102.15deg); }
-  .menu .menu-item:nth-child(12).active~.indicator { transform: rotate(154.28deg); }
-  .menu .menu-item:nth-child(15).active~.indicator { transform: rotate(203.51deg); }
-  .menu .menu-item:nth-child(18).active~.indicator { transform: rotate(257.14deg); }
-  .menu .menu-item:nth-child(21).active~.indicator { transform: rotate(307.57deg); }
+  .menu.active .indicator::before {
+    top: -59px;
+    left: -89px;
+  }
+
+  .menu .menu-item:nth-child(3).active~.indicator  { transform: translateX(-70px) rotate(0deg); }
+  .menu .menu-item:nth-child(6).active~.indicator  { transform: translateX(-70px) rotate(50.3deg); }
+  .menu .menu-item:nth-child(9).active~.indicator  { transform: translateX(-70px) rotate(102.15deg); }
+  .menu .menu-item:nth-child(12).active~.indicator { transform: translateX(-70px) rotate(154.28deg); }
+  .menu .menu-item:nth-child(15).active~.indicator { transform: translateX(-70px) rotate(203.51deg); }
+  .menu .menu-item:nth-child(18).active~.indicator { transform: translateX(-70px) rotate(257.14deg); }
+  .menu .menu-item:nth-child(21).active~.indicator { transform: translateX(-70px) rotate(307.57deg); }
 }
 
 /* ===== nameId: the arrow button overlay — CENTERED in circle ===== */
