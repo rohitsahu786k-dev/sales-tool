@@ -4,34 +4,44 @@
 
 /* Page wrapper */
 .vslider-page {
-  display: flex;
-  flex-direction: column;
+  --left-panel: clamp(360px, 42vw, 560px);
+  display: grid;
+  grid-template-columns: 1fr;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100svh;
+  background:
+    radial-gradient(circle at 72% 18%, rgba(255, 255, 255, 0.62), transparent 32%),
+    linear-gradient(135deg, #f7f7f7 0%, #e6e6e6 48%, #d9d9d9 100%);
+  isolation: isolate;
 }
 
 @media (min-width: 1024px) {
   .vslider-page {
-    flex-direction: row;
+    grid-template-columns: minmax(340px, var(--left-panel)) minmax(0, 1fr);
   }
 }
 
 /* ---- LEFT PANEL ---- */
 .vslider-left {
   width: 100%;
-  padding: 16px 16px 0 16px;
+  min-width: 0;
+  padding: 0;
   box-sizing: border-box;
   position: relative;
   z-index: 10;
   display: flex;
   flex-direction: column;
+  gap: clamp(10px, 1.8vh, 20px);
 }
 
 @media (min-width: 1024px) {
   .vslider-left {
-    width: 42%;
-    min-height: 100vh;
-    padding: 0 0 210px 0;
+    width: auto;
+    min-height: 100svh;
+    padding: 0 0 clamp(18px, 3vh, 34px) 0;
+    background: rgba(255, 255, 255, 0.42);
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 20px 0 55px rgba(0, 0, 0, 0.08);
   }
 }
 
@@ -42,7 +52,7 @@
   justify-content: center;
   align-self: flex-start;
   width: fit-content;
-  margin: 12px 0 0 16px;
+  margin: 12px 0 0 clamp(16px, 4vw, 36px);
   padding: 10px 24px;
   background-color: #EA2D2D;
   color: #fff;
@@ -70,7 +80,7 @@
 
 @media (min-width: 768px) {
   .explore-btn {
-    margin: 16px 0 0 30px;
+    margin: 16px 0 0 clamp(24px, 3vw, 42px);
     padding: 12px 32px;
     font-size: 13px;
   }
@@ -85,50 +95,54 @@
 /* ---- RIGHT PANEL ---- */
 .vslider-right {
   width: 100%;
-  min-height: 220px;
+  min-height: clamp(280px, 52vw, 620px);
   position: relative;
   background-color: #E7E7E7;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(58px, 8vw, 92px) clamp(12px, 3vw, 44px) clamp(24px, 5vw, 64px);
+  box-sizing: border-box;
 }
 
 @media (min-width: 1024px) {
   .vslider-right {
-    width: 100%;
-    min-height: 100vh;
-    position: fixed;
+    width: auto;
+    min-height: 100svh;
+    position: sticky;
     top: 0;
-    right: 0;
-    height: 100vh;
+    height: 100svh;
+    padding: clamp(72px, 10vh, 116px) clamp(28px, 5vw, 84px) clamp(58px, 8vh, 90px);
   }
 }
 
-/* imageView must have full height so absolute img can fill it */
 .vslider-right .imageView {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .vslider-right img.product,
 .vslider-right video.product {
   width: 100%;
-  height: auto;
+  height: 100%;
+  max-width: min(100%, 1180px);
+  max-height: calc(100svh - 160px);
   object-fit: contain;
   display: block;
   cursor: pointer;
+  filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.18));
 }
 
 @media (min-width: 1024px) {
 
   .vslider-right img.product,
   .vslider-right video.product {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
+    position: relative;
     object-fit: contain;
   }
 }
@@ -143,7 +157,9 @@
 }
 
 .wSLogoIn img {
-  width: 90px;
+  width: clamp(96px, 18vw, 170px);
+  height: auto;
+  display: block;
 }
 
 @media (min-width: 1024px) {
@@ -153,7 +169,7 @@
   }
 
   .wSLogoIn img {
-    width: 160px;
+    width: clamp(150px, 13vw, 260px);
   }
 }
 
@@ -163,7 +179,7 @@
   z-index: 9;
   width: 100%;
   margin-top: 12px;
-  padding: 0 0 0 16px;
+  padding: 0 0 0 clamp(16px, 4vw, 36px);
   box-sizing: border-box;
 }
 
@@ -172,9 +188,9 @@
     position: relative;
     top: auto;
     transform: none;
-    width: 40%;
+    width: min(320px, calc(100% - 42px));
     margin-top: 0;
-    padding: 0 0 0 30px;
+    padding: 0 0 0 clamp(24px, 3vw, 42px);
   }
 }
 
@@ -282,11 +298,12 @@
 
 @media (min-width: 1024px) {
   .cSliderContainer {
-    width: 40%;
-    position: fixed;
-    bottom: 16px;
-    left: 0;
-    padding: 0 16px;
+    width: 100%;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin-top: auto;
+    padding: 0 clamp(18px, 2.8vw, 34px);
   }
 }
 
@@ -303,8 +320,8 @@
 
 @media (min-width: 1024px) {
   .cSlider img {
-    width: 7vw;
-    max-width: 120px;
+    width: clamp(70px, 7vw, 112px);
+    max-width: 112px;
   }
 }
 

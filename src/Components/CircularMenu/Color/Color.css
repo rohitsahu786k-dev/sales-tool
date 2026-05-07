@@ -26,12 +26,12 @@
 
 @media (min-width: 1024px) {
   .dots {
-    position: fixed;
-    right: clamp(16px, 4vw, 80px);
+    position: absolute;
+    right: clamp(16px, 4vw, 64px);
     bottom: clamp(16px, 3vh, 28px);
-    left: clamp(380px, 38vw, 540px);
+    left: clamp(16px, 4vw, 64px);
     width: auto;
-    max-width: calc(100vw - clamp(380px, 38vw, 540px) - clamp(16px, 4vw, 80px));
+    max-width: calc(100% - clamp(32px, 8vw, 128px));
     transform: none;
     margin: 0;
     padding: clamp(8px, 1vw, 12px) clamp(14px, 2vw, 24px);
@@ -80,8 +80,8 @@
 
 @media (min-width: 1024px) {
   .dots img {
-    width: clamp(52px, 4.8vw, 70px);
-    height: clamp(52px, 4.8vw, 70px);
+    width: clamp(46px, 4.2vw, 64px);
+    height: clamp(46px, 4.2vw, 64px);
   }
 }
 

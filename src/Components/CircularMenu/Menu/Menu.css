@@ -3,13 +3,13 @@
 /* Outer ring — mobile: centered, desktop: fixed bottom-left */
 .menu {
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: clamp(218px, 62vw, 260px);
+  height: clamp(218px, 62vw, 260px);
   display: flex;
   justify-content: center;
   align-items: center;
   transform: rotate(90deg);
-  margin: 40px auto 20px auto;
+  margin: clamp(22px, 4vh, 44px) auto clamp(18px, 3vh, 30px);
   z-index: 9;
   padding: 0;
   border-radius: 100%;
@@ -21,8 +21,8 @@
     position: fixed;
     bottom: 30px;
     left: 50px;
-    width: 250px;
-    height: 250px;
+    width: clamp(224px, 18vw, 268px);
+    height: clamp(224px, 18vw, 268px);
     margin: 0;
   }
 }
@@ -36,8 +36,8 @@
 /* Inner white circle (toggle) */
 .menu .toggle {
   position: absolute;
-  width: 150px;
-  height: 150px;
+  width: 60%;
+  height: 60%;
   background: #ffffff;
   border-radius: 100%;
   display: flex;
@@ -53,8 +53,8 @@
 
 @media (min-width: 1024px) {
   .menu .toggle {
-    width: 150px;
-    height: 150px;
+    width: 60%;
+    height: 60%;
   }
 }
 
@@ -72,15 +72,15 @@
 /* Each icon item around the ring */
 .menu .menu-item {
   position: absolute;
-  left: 7px;
+  left: 3%;
   list-style: none;
-  transform-origin: 113px;
+  transform-origin: calc((clamp(218px, 62vw, 260px) / 2) - 12px);
   z-index: 3;
 }
 
 @media (min-width: 1024px) {
   .menu .menu-item {
-    transform-origin: 113px;
+    transform-origin: calc((clamp(224px, 18vw, 268px) / 2) - 12px);
   }
 }
 
@@ -101,8 +101,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 28px;
-  height: 28px;
+  width: clamp(24px, 7vw, 30px);
+  height: clamp(24px, 7vw, 30px);
   font-size: 1.75em;
   color: #cccccc;
   transform: rotate(calc(-120deg * var(--i))) translateX(0px);
@@ -110,8 +110,8 @@
 
 @media (min-width: 1024px) {
   .menu .menu-item img {
-    width: 28px;
-    height: 28px;
+    width: clamp(25px, 2vw, 30px);
+    height: clamp(25px, 2vw, 30px);
   }
 }
 
@@ -153,8 +153,8 @@
   inset: 0;
   border-radius: 50%;
   background: conic-gradient(from 245deg, #ff0000 0deg 50deg, transparent 50deg 360deg);
-  -webkit-mask: radial-gradient(circle, transparent 0 74px, #000 75px 124px, transparent 125px);
-  mask: radial-gradient(circle, transparent 0 74px, #000 75px 124px, transparent 125px);
+  -webkit-mask: radial-gradient(circle, transparent 0 29%, #000 30% 49%, transparent 50%);
+  mask: radial-gradient(circle, transparent 0 29%, #000 30% 49%, transparent 50%);
   transition: 0.5s;
   opacity: 0;
 }
@@ -230,8 +230,8 @@
 /* ===== Arrow button ===== */
 .circleButton {
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: clamp(52px, 14vw, 62px);
+  height: clamp(52px, 14vw, 62px);
   color: #111111;
   background-color: #ffffff;
   border: 2px solid #e0e0e0;
@@ -247,8 +247,8 @@
 
 @media (min-width: 1024px) {
   .circleButton {
-    width: 60px;
-    height: 60px;
+    width: clamp(54px, 4vw, 64px);
+    height: clamp(54px, 4vw, 64px);
     font-size: 30px;
   }
 }

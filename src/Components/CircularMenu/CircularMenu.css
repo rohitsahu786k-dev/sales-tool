@@ -5,38 +5,62 @@
 /* ---- Left panel (text + circular menu) ---- */
 .circular-left {
   width: 100%;
-  padding: 16px 16px 0 16px;
+  min-width: 0;
+  padding: 0;
   box-sizing: border-box;
   position: relative;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 2vh, 22px);
+  background: rgba(255, 255, 255, 0.42);
 }
 
 @media (min-width: 1024px) {
   .circular-left {
-    width: 42%;
-    padding: 40px 20px 0 30px;
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: clamp(360px, 42vw, 560px);
+    height: 100svh;
+    min-height: 100svh;
+    padding-bottom: clamp(22px, 4vh, 44px);
+    background: transparent;
+    border-right: 0;
+    box-shadow: none;
+    pointer-events: none;
+  }
+
+  .circular-left .heads,
+  .circular-left .menu {
+    pointer-events: auto;
   }
 }
 
 /* ---- Right panel (product image/video/certificates) ---- */
 .circular-right {
   width: 100%;
-  min-height: 260px;
+  min-height: clamp(300px, 56vw, 660px);
   position: relative;
   background: #E7E7E7;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @media (min-width: 1024px) {
   .circular-right {
-    width: 100%;
-    min-height: 100vh;
+    width: 100vw;
+    min-height: 100svh;
     position: fixed;
+    inset: 0;
     top: 0;
-    right: 0;
-    height: 100vh;
+    height: 100svh;
     overflow: hidden;
     z-index: 1;
+    padding: 0;
   }
 }
 
@@ -50,7 +74,9 @@
 }
 
 .wSLogoIn img {
-  width: 90px;
+  width: clamp(96px, 18vw, 170px);
+  height: auto;
+  display: block;
 }
 
 @media (max-width: 767px) {
@@ -66,7 +92,7 @@
   }
 
   .wSLogoIn img {
-    width: 160px;
+    width: clamp(150px, 13vw, 260px);
   }
 }
 
@@ -81,32 +107,40 @@
   overflow: hidden;
 }
 
+.circular-right > div:not(.wSLogoIn):not(.dots) {
+  width: 100%;
+  height: 100%;
+}
+
 .circular-right .imageView img,
 .circular-right .colorImage {
   width: 100% !important;
   height: auto !important;
   max-width: 100% !important;
-  max-height: 100% !important;
+  max-height: calc(100svh - 170px) !important;
   object-fit: contain;
   object-position: center bottom;
   display: block;
+  filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.18));
 }
 
 @media (min-width: 1024px) {
   .circular-right .imageView,
   .circular-right .videoView {
-    min-height: 100vh;
+    min-height: auto;
   }
 }
 
 .circular-right video.product {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  max-height: none;
+  object-fit: cover;
   display: block;
   position: relative;
   left: auto;
   cursor: pointer;
+  filter: none;
 }
 
 /* ---- Color options bar ---- */
@@ -136,12 +170,12 @@
 
 @media (min-width: 1024px) {
   .dots {
-    position: fixed;
-    right: clamp(16px, 4vw, 80px);
+    position: absolute;
+    right: clamp(16px, 4vw, 64px);
     bottom: clamp(16px, 3vh, 28px);
     left: clamp(380px, 38vw, 540px);
     width: auto;
-    max-width: calc(100vw - clamp(380px, 38vw, 540px) - clamp(16px, 4vw, 80px));
+    max-width: calc(100vw - clamp(380px, 38vw, 540px) - clamp(16px, 4vw, 64px));
     transform: none;
     margin: 0;
     padding: clamp(8px, 1vw, 12px) clamp(14px, 2vw, 24px);
@@ -215,17 +249,19 @@
 @media (min-width: 1024px) {
   .iconChildItems video {
     width: 100%;
-    height: 100vh;
-    object-fit: contain;
-    position: absolute;
-    top: 0;
-    left: 0;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+    position: relative;
+    top: auto;
+    left: auto;
   }
 }
 
 .iconChildItems .imageView img {
   width: 100%;
   height: auto;
+  max-height: calc(100svh - 170px);
   object-fit: contain;
 }
 
@@ -242,9 +278,15 @@
   box-sizing: border-box;
 }
 
+.newCertifyContainer .certify-heading,
+.newCertifyContainer .certify-grid {
+  position: relative;
+  z-index: 2;
+}
+
 .certifyProductPreview {
   width: 100%;
-  height: clamp(180px, 52vw, 300px);
+  height: clamp(180px, 42vw, 360px);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -309,13 +351,27 @@
   .newCertifyContainer {
     height: 100%;
     min-height: unset;
-    padding: 28px 40px 34px;
+    padding: clamp(72px, 10vh, 110px) clamp(28px, 4vw, 58px) clamp(30px, 5vh, 54px) clamp(430px, 36vw, 560px);
     justify-content: flex-end;
+    align-items: stretch;
   }
 
   .certifyProductPreview {
-    height: 62vh;
+    height: min(54vh, 440px);
     margin-bottom: 18px;
+  }
+
+  .certify-heading {
+    text-align: left;
+    padding-left: clamp(16px, 2vw, 28px);
+  }
+
+  .certify-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    align-items: stretch;
+    justify-content: stretch;
+    gap: clamp(12px, 1.4vw, 22px);
   }
 
   .certifyImg {
@@ -325,6 +381,26 @@
 
   .certifyImgWrapper {
     padding: 12px;
+    min-height: 116px;
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 720px) {
+  .newCertifyContainer {
+    justify-content: center;
+    padding-top: clamp(86px, 12vh, 120px);
+  }
+
+  .certifyProductPreview {
+    display: none;
+  }
+
+  .certifyImg {
+    height: 64px;
+  }
+
+  .certifyImgWrapper {
+    min-height: 98px;
   }
 }
 
@@ -351,19 +427,19 @@
 
 @media (min-width: 1024px) {
   .deskLayout {
-    position: absolute !important;
-    right: 100px !important;
+    position: relative !important;
+    right: auto !important;
     left: auto !important;
-    width: 60% !important;
-    transform: translate(10px, 25%) !important;
+    width: min(78%, 820px) !important;
+    transform: none !important;
   }
 
   .deskFeat {
-    position: absolute !important;
-    right: 0 !important;
+    position: relative !important;
+    right: auto !important;
     left: auto !important;
-    width: 60% !important;
-    transform: translate(10px, 25%) !important;
+    width: min(78%, 820px) !important;
+    transform: none !important;
     border-radius: 40px 0 0 40px;
   }
 }

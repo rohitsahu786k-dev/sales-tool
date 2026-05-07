@@ -21,11 +21,11 @@
 /* Desktop: fixed at bottom-left */
 @media (min-width: 1024px) {
   .cSliderContainer {
-    width: 40%;
-    position: fixed;
-    bottom: 20px;
-    left: 0;
-    padding: 0 20px;
+    width: 100%;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    padding: 0 clamp(18px, 2.8vw, 34px);
   }
 }
 
@@ -72,8 +72,8 @@
 
 @media (min-width: 1024px) {
   .cSlider img {
-    width: clamp(78px, 7vw, 120px);
-    max-width: 120px;
+    width: clamp(70px, 7vw, 112px);
+    max-width: 112px;
   }
 }
 
