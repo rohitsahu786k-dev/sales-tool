@@ -31,13 +31,17 @@ function CircularMenu() {
   useEffect(() => {
     if (!slug || !deskList) return;
     const matched = deskList.find(d => toSlug(d.title) === slug);
-    if (matched && matched.id !== activeDesk.id) {
+    if (!matched) return;
+
+    // Always reset wheel/feature media on console switch
+    // (prevents old console image/video/feature content from flashing)
+    if (matched.id !== activeDesk?.id) {
       dispatch(setActiveDesk(matched.id));
-      dispatch(setWheelIndex(0));
-      dispatch(setDisplayImage(true));
-      dispatch(resetChild());
     }
-  }, [slug, deskList]); // eslint-disable-line
+    dispatch(setWheelIndex(0));
+    dispatch(setDisplayImage(true));
+    dispatch(resetChild());
+  }, [slug, deskList, activeDesk?.id, dispatch]);
 
   // Update description when feature changes
   useEffect(() => {
