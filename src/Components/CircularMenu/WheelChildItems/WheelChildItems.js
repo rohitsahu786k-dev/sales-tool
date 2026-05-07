@@ -6,6 +6,7 @@ function WheelChildItems() {
 
     const slides = useSelector(state => state.wheelItem.childItem);
     const selectedItem = useSelector(state => state.wheelItem.currentIndex);
+    const selectedSlide = slides[selectedItem];
 
     // const refC = useRef(null);
     const elementRefs = useRef([...Array(30)].map(() => createRef()));;
@@ -30,22 +31,22 @@ function WheelChildItems() {
     return (
         <>
             {/* <Carousel transitionMs={1000} ref={refC} showArrows={false} className='iconChildItems' onChange={(currentItem) => currentItem.play()}> */}
-            <div className='iconChildItems'>  {slides.map((slide, index) => {
-                return slide.type === "image" ?
-                    <div key={slide.media} style={{ display: selectedItem === (index) ? "block" : "none" }}>
+            <div className='iconChildItems'>
+                {selectedSlide && (
+                    selectedSlide.type === "image" ?
+                    <div key={selectedSlide.media}>
                         <div className='imageView'>
-                            <img src={slide.media} alt="" className={(slide.className ? slide.className : '') + ' colorImage'} />
+                            <img src={selectedSlide.media} alt="" className={(selectedSlide.className ? selectedSlide.className : '') + ' colorImage'} />
                         </div>
                     </div>
                     :
                     <div
-                        key={slide.media}
-                        style={{ display: selectedItem === (index) ? "block" : "none" }}>
-                        <video ref={elementRefs.current[index]} autoPlay={false} className='product' onClick={(e) => { if (e.target.requestFullscreen) { e.target.requestFullscreen(); } else if (e.target.webkitRequestFullscreen) { e.target.webkitRequestFullscreen(); } }} >
-                            <source src={slide.media} key={slide.media} />
+                        key={selectedSlide.media}>
+                        <video ref={elementRefs.current[selectedItem]} autoPlay={false} className='product' onClick={(e) => { if (e.target.requestFullscreen) { e.target.requestFullscreen(); } else if (e.target.webkitRequestFullscreen) { e.target.webkitRequestFullscreen(); } }} >
+                            <source src={selectedSlide.media} key={selectedSlide.media} />
                         </video>
                     </div>
-            })}
+                )}
             </div>
             {/* </Carousel> */}
             {/* return index == 0 ? <Image srcImage={img} /> : <div
