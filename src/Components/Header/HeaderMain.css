@@ -22,13 +22,13 @@
 .heads {
   position: relative;
   z-index: 9;
-  padding: 24px 16px 0 16px;
+  padding: 96px 16px 0 16px;
   box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
   .heads {
-    padding: 50px 50px 0 50px;
+    padding: 130px 50px 0 50px;
   }
 }
 
@@ -77,10 +77,10 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
-/* Logo bottom left */
+/* Logo top left */
 .wSLogo {
   position: fixed;
-  bottom: 20px;
+  top: 20px;
   left: 16px;
   z-index: 20;
 }
@@ -92,7 +92,7 @@
 
 @media (min-width: 768px) {
   .wSLogo {
-    bottom: 30px;
+    top: 30px;
     left: 40px;
   }
   .wSLogo img {

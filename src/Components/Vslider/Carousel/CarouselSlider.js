@@ -17,6 +17,8 @@ const breakPoints = [
 const toSlug = (title) =>
   title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
 
+const toDeskSlug = (desk) => `${desk.id}-${toSlug(desk.title)}`;
+
 function CarouselSlider({ onConsoleClick }) {
   const deskSelectedId = useSelector(state => state.desk.activeDesk);
   const DeskList = useSelector(state => state.desk.list);
@@ -29,14 +31,15 @@ function CarouselSlider({ onConsoleClick }) {
   // Are we on the listing page (/consoles) or product page (/consoles/:slug)?
   const isListingPage = location.pathname === '/consoles';
 
-  const handleClick = (id, title) => {
+  const handleClick = (desk) => {
+    const { id } = desk;
     dispatch(setActiveDesk(id));
     setImages(id);
 
     if (isListingPage) {
       if (onConsoleClick) onConsoleClick();
     } else {
-      navigate(`/consoles/${toSlug(title)}`);
+      navigate(`/consoles/${toDeskSlug(desk)}`);
     }
   };
 
@@ -77,7 +80,7 @@ function CarouselSlider({ onConsoleClick }) {
                     src={desk.img}
                     alt={desk.title}
                     key={desk.id}
-                    onClick={() => handleClick(desk.id, desk.title)}
+                    onClick={() => handleClick(desk)}
                     className={image === desk.id ? 'active' : ''}
                     style={{ cursor: 'pointer' }}
                   />

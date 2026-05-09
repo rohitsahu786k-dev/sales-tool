@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import logo from '../../../assets/logo-black.png'
 
 
 function Header2(props) {
   return (
     <>
       <div className="heads">
+        <img className="console-page-logo" src={logo} alt="OnePWS" />
         <div className="hamburger">
           <h1>{props.title}</h1>
         </div>

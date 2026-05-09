@@ -16,6 +16,17 @@
   background: rgba(255, 255, 255, 0.42);
 }
 
+.circular-left .heads {
+  padding: clamp(20px, 4vh, 42px) clamp(16px, 4vw, 36px) 0;
+}
+
+.console-page-logo {
+  display: block;
+  width: clamp(124px, 18vw, 210px);
+  height: auto;
+  margin: 0 0 clamp(18px, 3vh, 30px) 0;
+}
+
 @media (min-width: 1024px) {
   .circular-left {
     position: fixed;
@@ -33,6 +44,10 @@
   .circular-left .heads,
   .circular-left .menu {
     pointer-events: auto;
+  }
+
+  .circular-left .heads {
+    padding: clamp(28px, 5vh, 54px) clamp(24px, 3vw, 42px) 0;
   }
 }
 
@@ -64,38 +79,6 @@
   }
 }
 
-/* ---- Logo in right panel ---- */
-.wSLogoIn {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 20;
-  pointer-events: none;
-}
-
-.wSLogoIn img {
-  width: clamp(96px, 18vw, 170px);
-  height: auto;
-  display: block;
-}
-
-@media (max-width: 767px) {
-  .circular-right .wSLogoIn {
-    display: none;
-  }
-}
-
-@media (min-width: 1024px) {
-  .wSLogoIn {
-    top: 30px;
-    right: 30px;
-  }
-
-  .wSLogoIn img {
-    width: clamp(150px, 13vw, 260px);
-  }
-}
-
 /* ---- Product image inside right panel ---- */
 .circular-right .imageView,
 .circular-right .videoView {
@@ -107,7 +90,7 @@
   overflow: hidden;
 }
 
-.circular-right > div:not(.wSLogoIn):not(.dots) {
+.circular-right > div:not(.dots) {
   width: 100%;
   height: 100%;
 }
@@ -332,6 +315,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   transition: transform 0.2s;
 }
 
@@ -340,9 +324,10 @@
 }
 
 .certifyImg {
+  width: min(100%, 110px);
   height: 60px;
-  width: auto;
-  max-width: 110px;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   display: block;
 }
@@ -375,8 +360,9 @@
   }
 
   .certifyImg {
+    width: min(100%, 160px);
     height: 76px;
-    max-width: 160px;
+    max-width: 100%;
   }
 
   .certifyImgWrapper {

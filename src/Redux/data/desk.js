@@ -73,7 +73,7 @@ export const deskList = [
     {
         id: 0,
         assetsId: 11,
-        title: 'XLAT DE',
+        title: 'XLAT RE',
         img: desk11,
         viewer3d:false,
         displayImage: display11,
@@ -84,8 +84,8 @@ export const deskList = [
         set activeLongDescription(longDescription) {
             this.longDescription = longDescription;
         },
-        longDescription: "The effectiveness, efficiency and satisfaction that XLAT DE offers in a high-tech environment are the result of its versatile adaptability that gives the best-in-class user experience to the operators.XLAT DE is a unique and robust platform, capable to adapt to the specific requirement of the operator and centralize all functions on one single touch screen. The elegance of its simple design loaded with all necessary features, make XLAT J one of the most astonishing consoles of the future.  ",
-        shortDescription: "The effectiveness, efficiency and satisfaction that XLAT DE offers in a high-tech environment are the result of its versatile adaptability that gives the best-in-class user experience to the operators.XLAT DE is a unique and robust platform, capable to adapt to the specific requirement of the operator and centralize all functions on one single touch screen. The elegance of its simple design loaded with all necessary features, make XLAT DE one of the most astonishing consoles of the future.",
+        longDescription: "The effectiveness, efficiency and satisfaction that XLAT RE offers in a high-tech environment are the result of its versatile adaptability that gives the best-in-class user experience to the operators.XLAT RE is a unique and robust platform, capable to adapt to the specific requirement of the operator and centralize all functions on one single touch screen. The elegance of its simple design loaded with all necessary features, make XLAT RE one of the most astonishing consoles of the future.  ",
+        shortDescription: "The effectiveness, efficiency and satisfaction that XLAT RE offers in a high-tech environment are the result of its versatile adaptability that gives the best-in-class user experience to the operators.XLAT RE is a unique and robust platform, capable to adapt to the specific requirement of the operator and centralize all functions on one single touch screen. The elegance of its simple design loaded with all necessary features, make XLAT RE one of the most astonishing consoles of the future.",
         video: video11,
         features: [
             "Exceptional design ",
@@ -142,7 +142,7 @@ export const deskList = [
     {
         id: 1,
         assetsId: 12,
-        title: 'XLAT ZE+',
+        title: 'XLAT ZE',
         img: desk12,
         viewer3d:false,
         displayImage: display12,
@@ -282,7 +282,7 @@ export const deskList = [
     {
         id: 3,
         assetsId: 13,
-        title: 'XLAT PLUS',
+        title: 'XLAT',
         img: desk13,
         viewer3d:false,
         displayImage: display13,
@@ -293,8 +293,8 @@ export const deskList = [
         set activeLongDescription(longDescription) {
             this.longDescription = longDescription;
         },
-        longDescription: "XLAT Plus Console gives the end user, a complete control of the working environment. XLAT&trade; is designed to accommodate radical changes in technology, enabling the user with a flexible module to improve process efficiency.",
-        shortDescription: "XLAT Plus Console gives the end user, a complete control of the working environment. XLAT&trade; is designed to accommodate radical changes in technology, enabling the user with a flexible module to improve process efficiency.",
+        longDescription: "XLAT Console gives the end user, a complete control of the working environment. XLAT&trade; is designed to accommodate radical changes in technology, enabling the user with a flexible module to improve process efficiency.",
+        shortDescription: "XLAT Console gives the end user, a complete control of the working environment. XLAT&trade; is designed to accommodate radical changes in technology, enabling the user with a flexible module to improve process efficiency.",
         video: video13,
         features: [
             "Exceptional design ",
@@ -707,7 +707,7 @@ export const deskList = [
     {
         id: 9,
         assetsId: 3,
-        title: 'XLAT C',
+        title: 'XLAT CE',
         img: desk4,
         viewer3d:false,
         displayImage: display4,
@@ -718,8 +718,8 @@ export const deskList = [
         set activeLongDescription(longDescription) {
             this.longDescription = longDescription;
         },
-        longDescription: "XLAT C, with its intelligent dashboard, adapts to an individual operator’s need to perform with better comfort and ease, under task critical control room operations. The dashboard is designed to translate the operational expressions to an easily accessible smart touch control, increasing the efficiency and speed of critical decisions within a control room.",
-        shortDescription: "XLAT C, with its intelligent dashboard, adapts to an individual operator’s need to perform with better comfort and ease, under task critical control room operations. The dashboard is designed to translate the operational expressions to an easily accessible smart touch control, increasing the efficiency and speed of critical decisions within a control room.",
+        longDescription: "XLAT CE, with its intelligent dashboard, adapts to an individual operator’s need to perform with better comfort and ease, under task critical control room operations. The dashboard is designed to translate the operational expressions to an easily accessible smart touch control, increasing the efficiency and speed of critical decisions within a control room.",
+        shortDescription: "XLAT CE, with its intelligent dashboard, adapts to an individual operator’s need to perform with better comfort and ease, under task critical control room operations. The dashboard is designed to translate the operational expressions to an easily accessible smart touch control, increasing the efficiency and speed of critical decisions within a control room.",
         video: video4,
         features: [
             "Personalized Desking",
@@ -852,7 +852,7 @@ export const deskList = [
     {
         id: 11,
         assetsId: 0,
-        title: 'XLAT J',
+        title: 'XLAT JE',
         img: desk1,
         viewer3d:false,
         displayImage: display1,
@@ -863,8 +863,8 @@ export const deskList = [
         set activeLongDescription(longDescription) {
             this.longDescription = longDescription;
         },
-        longDescription: "The effectiveness, efficiency and satisfaction that XLAT J offers in a high-tech environment are the result of its versatile adaptability that gives the best-in-class user experience to the operators.XLAT J is a unique and robust platform, capable to adapt to the specific requirement of the operator and centralize all functions on one single touch screen. The elegance of its simple design loaded with all necessary features, make XLAT J one of the most astonishing consoles of the future.  ",
-        shortDescription: "The effectiveness, efficiency and satisfaction that XLAT J offers in a high-tech environment are the result of its versatile adaptability that gives the best-in-class user experience to the operators.XLAT J is a unique and robust platform, capable to adapt to the specific requirement of the operator and centralize all functions on one single touch screen. The elegance of its simple design loaded with all necessary features, make XLAT J one of the most astonishing consoles of the future.",
+        longDescription: "The effectiveness, efficiency and satisfaction that XLAT JE offers in a high-tech environment are the result of its versatile adaptability that gives the best-in-class user experience to the operators.XLAT JE is a unique and robust platform, capable to adapt to the specific requirement of the operator and centralize all functions on one single touch screen. The elegance of its simple design loaded with all necessary features, make XLAT JE one of the most astonishing consoles of the future.  ",
+        shortDescription: "The effectiveness, efficiency and satisfaction that XLAT JE offers in a high-tech environment are the result of its versatile adaptability that gives the best-in-class user experience to the operators.XLAT JE is a unique and robust platform, capable to adapt to the specific requirement of the operator and centralize all functions on one single touch screen. The elegance of its simple design loaded with all necessary features, make XLAT JE one of the most astonishing consoles of the future.",
         video: video1,
         features: [
             "Exceptional design ",
@@ -918,4 +918,4 @@ export const deskList = [
             return deskXyzs.find((xyz) => xyz.deskId === this.assetsId).xyz
         }
     }
-]
+].filter((desk) => desk.id !== 1 && desk.title !== 'Dynamic O')

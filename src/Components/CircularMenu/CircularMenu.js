@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import logo from '../../assets/logo-black.png'
 import Color from './Color/Color'
 import Header3 from './Header3'
 import Menu from './Menu/Menu'
@@ -9,15 +8,18 @@ import Image from './ImageAssets/Image'
 import WheelChildItems from './WheelChildItems/WheelChildItems'
 import { setActiveLongDescription, setActiveDesk, setDisplayImage, resetChild, setWheelIndex } from '../../Redux/action'
 import Certificate from './Certificate/certificate'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import './CircularMenu.css'
 
 // Same slug logic used in CarouselSlider
 const toSlug = (title) =>
   title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
 
+const toDeskSlug = (desk) => `${desk.id}-${toSlug(desk.title)}`;
+
 function CircularMenu() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { slug } = useParams();
 
   const activeDesk = useSelector(state => state.desk.activeDeskInfo);
@@ -30,8 +32,11 @@ function CircularMenu() {
   // When URL slug changes, select the matching console
   useEffect(() => {
     if (!slug || !deskList) return;
-    const matched = deskList.find(d => toSlug(d.title) === slug);
-    if (!matched) return;
+    const matched = deskList.find(d => toDeskSlug(d) === slug) || deskList.find(d => toSlug(d.title) === slug);
+    if (!matched) {
+      navigate('/consoles', { replace: true });
+      return;
+    }
 
     // Always reset wheel/feature media on console switch
     // (prevents old console image/video/feature content from flashing)
@@ -41,7 +46,7 @@ function CircularMenu() {
     dispatch(setWheelIndex(0));
     dispatch(setDisplayImage(true));
     dispatch(resetChild());
-  }, [slug, deskList, activeDesk?.id, dispatch]);
+  }, [slug, deskList, activeDesk?.id, dispatch, navigate]);
 
   // Update description when feature changes
   useEffect(() => {
@@ -84,10 +89,6 @@ function CircularMenu() {
             ? <Certificate />
             : <WheelChildItems />
         }
-
-        <div className='wSLogoIn'>
-          <img src={logo} alt="OnePWS" />
-        </div>
 
         {wheelIndex === 0 && <Color />}
       </div>

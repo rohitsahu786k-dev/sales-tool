@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import "./Vslider.css";
 import CarouselSlider from "./Carousel/CarouselSlider";
 import { useNavigate } from "react-router-dom";
-import logo from "../../assets/logo-black.png";
 import Header2 from "./Carousel/Header2";
 import ImageSliderAssets from "./ImageSliderAssets/ImageSliderAssets";
 import SideSlider from "./Carousel/SideSlider";
@@ -12,6 +11,8 @@ import FBXViewer from "../FBXViewer";
 const toSlug = (title) =>
   title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
 
+const toDeskSlug = (desk) => `${desk.id}-${toSlug(desk.title)}`;
+
 function Vslider({ setPlayVideo }) {
   const activeDesk = useSelector((state) => state.desk.activeDeskInfo);
   const disableAllMenu = useSelector((state) => state.desk.disableAllMenu);
@@ -20,7 +21,7 @@ function Vslider({ setPlayVideo }) {
 
   const handleExplore = () => {
     setPlayVideo(true);
-    navigate(`/consoles/${toSlug(activeDesk.title)}`);
+    navigate(`/consoles/${toDeskSlug(activeDesk)}`);
   };
 
   return (
@@ -63,9 +64,6 @@ function Vslider({ setPlayVideo }) {
         ) : (
           <ImageSliderAssets onConsoleClick={handleExplore} />
         )}
-        <div className="wSLogoIn">
-          <img src={logo} alt="OnePWS" />
-        </div>
       </div>
     </div>
   );
