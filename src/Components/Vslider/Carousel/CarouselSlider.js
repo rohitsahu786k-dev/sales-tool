@@ -49,10 +49,6 @@ function CarouselSlider({ onConsoleClick }) {
     const desk = DeskList[nextIndex];
     dispatch(setActiveDesk(desk.id));
     setImages(desk.id);
-
-    if (!isListingPage) {
-      navigate(`/consoles/${toDeskSlug(desk)}`);
-    }
   };
 
   useEffect(() => {

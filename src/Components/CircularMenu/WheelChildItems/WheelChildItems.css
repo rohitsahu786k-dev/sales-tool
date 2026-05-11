@@ -70,3 +70,35 @@
     object-fit: contain;
   }
 }
+
+@media (min-width: 1024px) {
+  .iconChildItems .imageView:has(.deskFeat) {
+    justify-content: flex-end;
+    padding: clamp(76px, 10vh, 116px) clamp(28px, 4vw, 70px) clamp(44px, 7vh, 78px) clamp(430px, 36vw, 580px);
+    box-sizing: border-box;
+  }
+
+  .iconChildItems .imageView img.deskFeat {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain;
+    object-position: center center;
+  }
+}
+
+@media (max-width: 1023px) {
+  .iconChildItems .imageView:has(.deskFeat) {
+    min-height: clamp(280px, 72vw, 560px);
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  .iconChildItems .imageView img.deskFeat {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 100% !important;
+    border-radius: 16px 0 0 16px;
+  }
+}

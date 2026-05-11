@@ -420,12 +420,38 @@
     transform: none !important;
   }
 
-  .deskFeat {
+  .iconChildItems .imageView:has(.deskFeat) {
+    justify-content: flex-end;
+    padding: clamp(76px, 10vh, 116px) clamp(28px, 4vw, 70px) clamp(44px, 7vh, 78px) clamp(430px, 36vw, 580px);
+    box-sizing: border-box;
+  }
+
+  .iconChildItems .imageView img.deskFeat {
     position: relative !important;
     right: auto !important;
     left: auto !important;
-    width: min(78%, 820px) !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
     transform: none !important;
+    object-fit: contain !important;
+    object-position: center center !important;
     border-radius: 40px 0 0 40px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .iconChildItems .imageView:has(.deskFeat) {
+    min-height: clamp(280px, 72vw, 560px);
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  .iconChildItems .imageView img.deskFeat {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 100% !important;
+    border-radius: 16px 0 0 16px;
   }
 }
