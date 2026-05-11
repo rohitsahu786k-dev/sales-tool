@@ -96,7 +96,7 @@ html, body {
 .main-area h1 {
   font-family: 'Be Vietnam Pro', sans-serif;
   font-size: clamp(30px, 4vw, 58px);
-  font-weight: 800;
+  font-weight: 400;
   color: #111;
   margin: 0 0 8px 0;
   line-height: 1.03;
