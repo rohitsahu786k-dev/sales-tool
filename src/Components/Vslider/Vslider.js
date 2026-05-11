@@ -11,7 +11,7 @@ import FBXViewer from "../FBXViewer";
 const toSlug = (title) =>
   title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
 
-const toDeskSlug = (desk) => `${desk.id}-${toSlug(desk.title)}`;
+const toDeskSlug = (desk) => toSlug(desk.title);
 
 function Vslider({ setPlayVideo }) {
   const activeDesk = useSelector((state) => state.desk.activeDeskInfo);

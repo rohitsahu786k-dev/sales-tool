@@ -11,11 +11,10 @@ import Certificate from './Certificate/certificate'
 import { useNavigate, useParams } from 'react-router-dom'
 import './CircularMenu.css'
 
-// Same slug logic used in CarouselSlider
 const toSlug = (title) =>
   title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
 
-const toDeskSlug = (desk) => `${desk.id}-${toSlug(desk.title)}`;
+const toDeskSlug = (desk) => toSlug(desk.title);
 
 function CircularMenu() {
   const dispatch = useDispatch();

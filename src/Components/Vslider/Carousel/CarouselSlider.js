@@ -1,32 +1,31 @@
-import React, { useState } from "react";
-import Carousel from "react-elastic-carousel";
+import React, { useMemo, useState } from "react";
 import './CarouselSlider.css'
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveDesk } from '../../../Redux/action';
 import { useEffect } from "react";
-import { useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-
-const breakPoints = [
-  { width: 1, itemsToShow: 3, itemsToSlide: 1 },
-  { width: 550, itemsToShow: 3, itemsToSlide: 1 },
-  { width: 768, itemsToShow: 3, itemsToSlide: 1 },
-  { width: 1200, itemsToShow: 3, itemsToSlide: 1 },
-];
 
 const toSlug = (title) =>
   title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
 
-const toDeskSlug = (desk) => `${desk.id}-${toSlug(desk.title)}`;
+const toDeskSlug = (desk) => toSlug(desk.title);
 
 function CarouselSlider({ onConsoleClick }) {
   const deskSelectedId = useSelector(state => state.desk.activeDesk);
   const DeskList = useSelector(state => state.desk.list);
   const dispatch = useDispatch();
-  const carouselRef = useRef(null);
   const [image, setImages] = useState(deskSelectedId);
   const navigate = useNavigate();
   const location = useLocation();
+  const selectedIndex = Math.max(0, DeskList.findIndex((desk) => desk.id === deskSelectedId));
+  const visibleStart = Math.min(
+    Math.max(0, selectedIndex - 1),
+    Math.max(0, DeskList.length - 3)
+  );
+  const visibleDesks = useMemo(
+    () => DeskList.slice(visibleStart, visibleStart + 3),
+    [DeskList, visibleStart]
+  );
 
   // Are we on the listing page (/consoles) or product page (/consoles/:slug)?
   const isListingPage = location.pathname === '/consoles';
@@ -43,6 +42,19 @@ function CarouselSlider({ onConsoleClick }) {
     }
   };
 
+  const handleStep = (direction) => {
+    const nextIndex = selectedIndex + direction;
+    if (nextIndex < 0 || nextIndex >= DeskList.length) return;
+
+    const desk = DeskList[nextIndex];
+    dispatch(setActiveDesk(desk.id));
+    setImages(desk.id);
+
+    if (!isListingPage) {
+      navigate(`/consoles/${toDeskSlug(desk)}`);
+    }
+  };
+
   useEffect(() => {
     setImages(deskSelectedId);
   }, [deskSelectedId]);
@@ -51,29 +63,18 @@ function CarouselSlider({ onConsoleClick }) {
     <>
       <div className="cSlider">
         <div className="cSliderContainer">
-          <Carousel
-            ref={carouselRef}
-            itemsToScroll={1}
-            itemsToShow={3}
-            initialFirstItem={deskSelectedId}
-            breakPoints={breakPoints}
-            transitionMs={600}
-            onNextStart={(currentItem, nextItem) => {
-              if (nextItem && DeskList[nextItem.index]) {
-                const desk = DeskList[nextItem.index];
-                dispatch(setActiveDesk(desk.id));
-                setImages(desk.id);
-              }
-            }}
-            onPrevStart={(currentItem, nextItem) => {
-              if (nextItem && DeskList[nextItem.index]) {
-                const desk = DeskList[nextItem.index];
-                dispatch(setActiveDesk(desk.id));
-                setImages(desk.id);
-              }
-            }}
+          <button
+            className="console-carousel-arrow"
+            type="button"
+            onClick={() => handleStep(-1)}
+            disabled={selectedIndex === 0}
+            aria-label="Previous console"
           >
-            {DeskList.map(desk => {
+            &#8249;
+          </button>
+
+          <div className="console-carousel-track">
+            {visibleDesks.map(desk => {
               return (
                 <div className="title" key={desk.id + 'desk'}>
                   <img
@@ -85,11 +86,21 @@ function CarouselSlider({ onConsoleClick }) {
                     style={{ cursor: 'pointer' }}
                   />
                   <br />
-                  <span>{image === desk.id ? desk.title : '\u00A0'}</span>
+                  <span>{desk.title}</span>
                 </div>
               );
             })}
-          </Carousel>
+          </div>
+
+          <button
+            className="console-carousel-arrow"
+            type="button"
+            onClick={() => handleStep(1)}
+            disabled={selectedIndex === DeskList.length - 1}
+            aria-label="Next console"
+          >
+            &#8250;
+          </button>
         </div>
       </div>
     </>
